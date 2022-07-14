@@ -1,8 +1,11 @@
 import Head from "next/head";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/Footer";
+import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>
           PSS | Emergency Vehicle Equipment | Sales, Service, & Installations
@@ -15,12 +18,17 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="body">
-          <div className="container mx-auto">Body</div>
-        </div>
+        <Header alt={false} />
+
+        <section id="home" className="body">
+          <ListSuppliers />
+          <ListSuppliers />
+          <ListSuppliers />
+          <ListSuppliers />
+        </section>
       </main>
 
-      <footer></footer>
-    </div>
+      <Footer />
+    </>
   );
 }
