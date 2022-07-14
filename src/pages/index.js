@@ -4,16 +4,18 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Meddly NextJS App - Tailwind SASS</title>
+        <title>
+          PSS | Emergency Vehicle Equipment | Sales, Service, & Installations
+        </title>
         <meta
           name="description"
-          content="Meddly NextJS App with Tailwind and SASS"
+          content="PSS | Emergency Vehicle Equipment | Sales, Service, & Installations"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="body">
           <div className="container mx-auto">Body</div>
         </div>
       </main>

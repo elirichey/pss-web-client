@@ -12,4 +12,3 @@
 
 - [NextJS](https://github.com/vercel/next.js/)
 - [SASS](https://github.com/sass/sass)
-- [Tailwind](https://github.com/tailwindlabs/tailwindcss)
