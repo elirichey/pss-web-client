@@ -10,6 +10,11 @@
   display: flex
   height: 40px
   background-color: $most_lt_blue
+  .show-cart-btn
+    font-weight: 500
+    background-color: transparent
+    border: none
+    margin-right: 20px
 
 #header-body
   background: $white
@@ -43,7 +48,8 @@
   ul
     max-width: 960px
     justify-content: flex-end
-  li
+    position: relative
+  .desktop-main-menu-link
     flex: 1
     display: flex
     align-items: center
@@ -53,7 +59,6 @@
     font-weight: 500
     text-transform: uppercase
     letter-spacing: 1px
-    position: relative
     margin-left: 10px
     margin-right: 10px
     .menu-item
@@ -129,11 +134,25 @@
   display: flex
   position: absolute
   top: 81px
+  left: 0
+  right: 0
   width: 720px
-  background-color: $most_lt_blue
+  background-color: $white
   border: solid 3px $white
-  border-top: none
-  box-shadow: 3px 7px 7px rgb(0 0 0 / 25%)
+  border-top: solid 2px $light
+  box-shadow: 0px 5px 5px rgb(0 0 0 / 10%)
+  padding: 20px
+  margin: auto
+  .title
+    display: flex
+    margin-bottom: 7px
+  ul
+  li
+    font-weight: 400
+    text-transform: none
+    margin-left: 10px
+    margin-bottom: 5px
+
 .mega-menu-polics
 .mega-menu-fire-ems
 .mega-menu-fleet

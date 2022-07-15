@@ -60,7 +60,7 @@ export default function DesktopMainMenu(props) {
   return (
     <div id="desktop-main-menu" className="flex">
       <ul className="flex row">
-        <li>
+        <li className="desktop-main-menu-link">
           <span className="menu-item">
             <Link href="/">
               <a>Home</a>
@@ -68,7 +68,7 @@ export default function DesktopMainMenu(props) {
           </span>
         </li>
 
-        <li>
+        <li className="desktop-main-menu-link">
           <span
             className="menu-item"
             onClick={() => {
@@ -92,7 +92,7 @@ export default function DesktopMainMenu(props) {
           {showPolice ? <PoliceMegaMenu refProp={clickPoliceRef} /> : null}
         </li>
 
-        <li>
+        <li className="desktop-main-menu-link">
           <span
             className="menu-item"
             onClick={() => {
@@ -115,7 +115,7 @@ export default function DesktopMainMenu(props) {
           {showFireEMT ? <FireEMSMegaMenu refProp={clickFireEMSRef} /> : null}
         </li>
 
-        <li>
+        <li className="desktop-main-menu-link">
           <span
             className="menu-item"
             onClick={() => {
@@ -138,7 +138,7 @@ export default function DesktopMainMenu(props) {
           {showFleet ? <FleetMegaMenu refProp={clickFleetRef} /> : null}
         </li>
 
-        <li>
+        <li className="desktop-main-menu-link">
           <span className="menu-item">
             <Link href="/">
               <a>Contact</a>
