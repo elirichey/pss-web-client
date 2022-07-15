@@ -22,9 +22,6 @@ export default function Home() {
 
         <section id="home" className="body">
           <ListSuppliers />
-          <ListSuppliers />
-          <ListSuppliers />
-          <ListSuppliers />
         </section>
       </main>
 

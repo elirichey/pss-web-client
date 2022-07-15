@@ -1,14 +1,26 @@
 footer
   display: flex
-  background-color: $dark
+  background-color: $white
   flex-direction: column
-  border-top: solid 1px $lt_blue
 
 #footer-main
   display: flex
-  background-color: $gray
   padding-top: 60px
   padding-bottom: 60px
+  .hide-desktop
+    display: none
+  .footer-title
+    display: flex
+    height: 32px
+    width: 100%
+    text-transform: uppercase
+    font-weight: 500
+  li
+    display: flex
+    padding-top: 7px
+    padding-bottom: 7px
+  a:hover
+    opacity: 0.5
 
 #footer-bottom
   flex: 1
@@ -17,6 +29,7 @@ footer
   justify-content: center
   min-width: 100%
   min-height: 40px
+  background-color: $black
   padding-top: 30px
   padding-bottom: 30px
 
@@ -54,10 +67,30 @@ footer
     img
       width: 24px
 
+  // Breakpoints
+
+@media(max-width: 1200px)
+  #footer-main
+    padding-bottom: 10px
+    .hide-desktop
+      display: flex
+    .hide-mobile
+      display: none
+    .column
+      padding-left: 30px
+      padding-right: 30px
+    .footer-title
+      justify-content: center
+    li
+      justify-content: center
+
 @media(max-width: 776px)
   #footer-main
     .row
       flex-direction: column
+    ul
+      margin-bottom: 50px
+
   #footer-bottom
     height: unset
     padding-top: 10px
