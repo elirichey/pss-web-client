@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import SupplierData from "./SupplierData";
 
 export default function ListSuppliers(props) {
@@ -9,7 +9,7 @@ export default function ListSuppliers(props) {
           const { id, name, img } = item;
           return (
             <li key={i}>
-              <img src={img} />
+              <Image src={img} layout="fill" objectFit="contain" />
             </li>
           );
         })}
