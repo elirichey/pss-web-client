@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FooterMenuLinks from "./data/FooterMenuLinks";
 
 export default function Footer(props) {
@@ -88,9 +89,15 @@ export default function Footer(props) {
       <div id="footer-bottom">
         <div className="container row text-center">
           <div id="footer-logo" className="column">
-            <a>
-              <img src="/image/logo-text-white.svg" />
-            </a>
+            <Link href="/">
+              <a>
+                <Image
+                  src="/image/logo-text-white.svg"
+                  height={33}
+                  width={120}
+                />
+              </a>
+            </Link>
           </div>
 
           <div id="footer-copyright" className="column text-center px-15">
@@ -105,7 +112,7 @@ export default function Footer(props) {
               target="_blank"
               className="social-icon"
             >
-              <img src="/image/social/facebook.svg" />
+              <Image src="/image/social/facebook.svg" height={24} width={24} />
             </a>
           </div>
         </div>

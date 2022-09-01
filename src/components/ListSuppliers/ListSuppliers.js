@@ -1,3 +1,4 @@
+// import Image from "next/image";
 import SupplierData from "./SupplierData";
 
 export default function ListSuppliers(props) {

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
-// import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
+import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
         <Header alt={false} />
 
         <section id="home" className="body">
-          {/* <ListSuppliers /> */}
+          <ListSuppliers />
         </section>
       </main>
 

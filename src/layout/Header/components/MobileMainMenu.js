@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import MainMenuLinks from "../data/MainMenuLinks";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MobileMainMenu(props) {
   // Click detection
@@ -57,9 +58,13 @@ export default function MobileMainMenu(props) {
         }}
       >
         {showMenu ? (
-          <img src="/image/close.svg" className="close" />
+          <div className="close">
+            <Image src="/image/close.svg" height={44} width={44} />
+          </div>
         ) : (
-          <img src="/image/mobile-menu.svg" className="open" />
+          <div className="open">
+            <Image src="/image/mobile-menu.svg" height={44} width={44} />
+          </div>
         )}
       </span>
 
