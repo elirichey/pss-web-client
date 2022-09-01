@@ -1,0 +1,40 @@
+#products-pagination
+  display: flex
+  margin-top: 30px
+  button
+    height: 40px
+    min-width: 40px
+    font-size: 14px
+    font-weight: 500
+    text-transform: uppercase
+    line-height: 20px
+    letter-spacing: 1px
+    background-color: transparent
+    border: solid 2px $gray
+    padding-bottom: 3px
+    padding-left: 15px
+    padding-right: 15px
+    margin-left: 5px
+    margin-right: 5px
+    &:hover
+      border-color: $red
+    &:disabled
+      font-size: 21px
+      color: $black
+      border-color: transparent
+    &[disabled]
+      font-size: 21px
+      color: $black
+      border-color: transparent
+  .ml-30
+    margin-left: 15px
+    border-color: transparent
+    &:hover
+      border-color: transparent
+      color: $red
+  .mr-30
+    margin-right: 15px
+    border-color: transparent
+    &:hover
+      border-color: transparent
+      color: $red

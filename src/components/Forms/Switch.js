@@ -35,12 +35,22 @@ export default function Switch(props) {
       {({ input, meta }) => (
         <div className="checkbox-field flex column pt-15">
           <Label label={label} hasError={meta.error && meta.touched} />
+          <label className="switch-small">
+            <input {...input} type="checkbox" className="checkbox" />
+            <span className="switch-slider-small round" />
+          </label>
+        </div>
+      )}
+
+      {/* ({ input, meta }) => (
+        <div className="checkbox-field flex column pt-15">
+          <Label label={label} hasError={meta.error && meta.touched} />
           <label className="switch">
             <input {...input} type="checkbox" className="checkbox" />
             <span className="switch-slider round" />
           </label>
         </div>
-      )}
+      ) */}
     </Field>
   );
 }

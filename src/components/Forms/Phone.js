@@ -3,8 +3,11 @@ import {
   required,
   composeValidators,
   mustBePhone,
-} from "../../utils/validation";
-import { enforceFormat, formatToPhone } from "../../utils/format-phone";
+} from "../../utilities/validation";
+import {
+  enforceFormat,
+  formatToPhone,
+} from "../../utilities/helpers/format-phone";
 import Label from "./Label";
 
 export function PhoneForm(props) {

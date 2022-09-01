@@ -1,10 +1,10 @@
 import { Form, Field } from "react-final-form";
-import { required } from "../../utils/validation";
+import { required } from "../../utilities/validation";
 import Label from "./Label";
 
 export function TextareaForm(props) {
   const onSubmit = async (values) => {
-    console.log("Submit Textarea:::", values.text);
+    console.log("Submit Textarea:::", values);
   };
 
   return (
@@ -14,7 +14,7 @@ export function TextareaForm(props) {
       render={({ handleSubmit, form, submitting, pristine, values }) => (
         <form onSubmit={handleSubmit}>
           <Textarea
-            name="text"
+            name="textarea"
             label="Textarea Input"
             initialValue="initialValue"
             placeholder="Placeholder"

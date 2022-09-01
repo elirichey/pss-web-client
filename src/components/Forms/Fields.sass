@@ -8,8 +8,8 @@ input, textarea, select
   align-items: center
   font-size: 12px
   line-height: 12px
-  color: #333
-  font-weight: bold
+  color: $dark
+  font-weight: 500
   input
     margin-left: 5px
     margin-bottom: 3px
@@ -18,8 +18,8 @@ input, textarea, select
   align-items: center
   font-size: 12px
   line-height: 12px
-  color: #d30707
-  font-weight: bold
+  color: $red
+  font-weight: 500
 
 .input-field
   position: relative
@@ -50,9 +50,9 @@ input, textarea, select
   display: block
   width: 100%
   border: none
-  border-bottom: 1px solid #000
+  border-bottom: 1px solid $black
   background-color: transparent
-  color: #001
+  color: $black
   font-size: 14px
   height: 38px
   padding-bottom: 0px
@@ -61,7 +61,7 @@ input, textarea, select
   font-size: 14px
   line-height: 1.5
   &:focus
-    border-bottom: 1px solid #00CC00
+    border-bottom: 1px solid $blue
     outline: none
     &:focus-visible
       outline: none
@@ -72,19 +72,19 @@ input, textarea, select
   width: 100%
   min-height: 38px
   max-height: 230px
-  border-top: 1px solid #e3e3e3
-  border-bottom: 1px solid #000
-  border-right: 1px solid #e3e3e3
-  border-left: 1px solid #e3e3e3
+  border-top: 1px solid $light
+  border-bottom: 1px solid $black
+  border-right: 1px solid $light
+  border-left: 1px solid $light
   background-color: transparent
-  color: #001
+  color: $black
   padding-right: 50px
   padding: 8px 12px
   margin-top: 10px
   font-size: 14px
   line-height: 21px
   &:focus
-    border-bottom: 1px solid #00CC00
+    border-bottom: 1px solid $blue
     outline: none
     &:focus-visible
       outline: none
@@ -118,13 +118,14 @@ input, textarea, select
   height: 38px
   width: 230px
   background-color: transparent
-  color: #001
+  color: $black
   font-size: 14px
   font-size: 14px
+  padding-left: 10px
   padding-right: 50px
   line-height: 1.5
   border: none
-  border-bottom: solid 1px #000
+  border-bottom: solid 1px $black
   .indicator
     display: flex
     justify-content: center
@@ -145,7 +146,7 @@ input, textarea, select
   top: 38px
   left: 0
   right: 0
-  background-color: purple
+  background-color: $light
   max-height: 230px
   overflow: scroll
   box-shadow: 4px 4px 8px 2px rgb(0 0 0 /10%)
@@ -164,29 +165,32 @@ input, textarea, select
   height: 38px
   width: 230px
   background-color: transparent
-  color: #FFF
+  color: $white
   font-size: 14px
   height: 38px
   padding: 0px
   font-size: 14px
   line-height: 1.5
-  button
+  .clickable
     display: flex
     align-items: center
     height: 38px
     width: 100%
-    background-color: #FFF
+    background-color: $light
+    color: $black
     border: none
-    border-bottom: solid 1px #000
+    border-bottom: solid 1px $black
+    cursor: pointer
+    padding-left: 10px
+    padding-right: 10px
     &:hover
-      background-color: #D0FAFF
-  &.active
-    button
-      background-color: #DDFFDD
+      background-color: $lt_blue
+    &.active
+      background-color: $lt_green
     .combobox
-      background-color: #DDFFDD
+      background-color: $lt_green
       &:hover
-        background-color: #D0FAFF
+        background-color: $lt_blue
 
   &.hide
     display: none
@@ -211,10 +215,10 @@ input, textarea, select
   &.combobox
     flex: 1
     padding: 0
-    background-color: #FFF
-    border-bottom: solid 1px #000
+    background-color: $white
+    border-bottom: solid 1px $black
     &:hover
-      background-color: #D0FAFF
+      background-color: $lt_blue
     .field-label
       flex: 1
       display: flex
@@ -266,7 +270,7 @@ input, textarea, select
   left: 0
   right: 0
   bottom: 0
-  background-color: #878787
+  background-color: $gray
   -webkit-transition: .4s
   transition: .4s
   &:before
@@ -276,13 +280,13 @@ input, textarea, select
     width: 26px // 13px
     left: 4px
     bottom: 4px
-    background-color: white
+    background-color: $white
     -webkit-transition: .4s
     transition: .4s
   input:checked + &
-    background-color: #00CC00
+    background-color: $blue
   input:focus + &
-    box-shadow: 0 0 1px #00CC00
+    box-shadow: 0 0 1px $blue
   input:checked + &:before
     -webkit-transform: translateX(26px) // 13px
     -ms-transform: translateX(26px) // 13px
@@ -291,3 +295,148 @@ input, textarea, select
     border-radius: 34px
   &.round:before
     border-radius: 50%
+.switch-small
+  position: relative
+  display: inline-block
+  width: 40px !important
+  height: 17px
+  & input
+    opacity: 0
+    width: 0
+    height: 0
+.switch-slider-small
+  position: absolute
+  cursor: pointer
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: $gray
+  -webkit-transition: .4s
+  transition: .4s
+  &:before
+    position: absolute
+    content: ""
+    height: 13px
+    width: 13px // 13px
+    left: 2px
+    bottom: 2px
+    background-color: $white
+    -webkit-transition: .4s
+    transition: .4s
+  input:checked + &
+    background-color: $green
+  input:focus + &
+    box-shadow: 0 0 1px $green
+  input:checked + &:before
+    -webkit-transform: translateX(22px) // 13px
+    -ms-transform: translateX(22px) // 13px
+    transform: translateX(22px) // 13px
+  &.round
+    border-radius: 17px
+  &.round:before
+    border-radius: 50%
+
+// Dropzone
+[role^="presentation"]
+    flex: 1
+    display: flex
+    align-items: center
+    justify-content: center
+.dropzone
+  flex: 1
+  display: flex
+  flex-direction: column
+  max-width: 100%
+  padding: 10px
+  border-width: 2px
+  border-radius: 2px
+  border-color: $light
+  border-style: dashed
+  background-color: $most_lt_blue
+  color: $gray
+  outline: none
+  transition: border .24s ease-in-out
+  overflow: hidden
+  margin-top: 10px
+  margin-bottom: 10px
+  &:focus
+    flex: 1
+    border-color: $blue
+  .column
+    max-width: 100%
+  .list-file-item
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    max-width: 100%
+    .preview-img
+      display: flex
+      max-width: 160px
+      margin: 10px auto 10px
+    .file-name
+      display: flex
+      align-items: center
+      max-width: 100%
+      overflow: hidden
+      font-size: 14px
+      .main
+        flex: 1
+        max-width: calc(100% - 45px)
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+      .ext
+        width: 45px
+  .list-files-list-item
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 50px,
+    max-width: 100%
+    border-bottom: dashed 2px $light
+    .preview-img
+      max-height: 40px
+      max-width: 40px
+      margin: 5px
+    .file-name
+      display: flex
+      align-items: center
+      max-width: 100%
+      overflow: hidden
+      font-size: 14px
+      .main
+        flex: 1
+        max-width: calc(100% - 45px)
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+      .ext
+        width: 45px
+.empty-dropzone
+  flex: 1
+  align-items: center
+  margin: auto
+
+// Submit
+.submit-form-btn
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 36px
+  width: 120px
+  font-weight: 500
+  color: $black
+  background-color: $white
+  border: solid 2px $gray
+  border-radius: 18px
+  padding-bottom: 3px
+  margin: auto
+  &:hover
+    color: $black
+    border-color: $red
+  &.disabled
+    color: $gray
+    border: solid 2px $light
+    cursor: unset

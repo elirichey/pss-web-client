@@ -1,5 +1,5 @@
 import { Form, Field } from "react-final-form";
-import { required } from "../../utils/validation";
+import { required } from "../../utilities/validation";
 import Label from "./Label";
 
 export function InputForm(props) {

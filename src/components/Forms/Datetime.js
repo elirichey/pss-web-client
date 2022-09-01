@@ -1,6 +1,6 @@
 import { Form, Field } from "react-final-form";
-import { combineDateTime } from "../../utils/format-datetime";
-import { required } from "../../utils/validation";
+import { combineDateTime } from "../../utilities/helpers/format-datetime";
+import { required } from "../../utilities/validations/validation";
 import Label from "./Label";
 import Date from "./Date";
 import Time from "./Time";

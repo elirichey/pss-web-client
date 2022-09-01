@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { required, composeValidators } from "../../utils/validation";
+import { required, composeValidators } from "../../utilities/validation";
 import { Form, Field } from "react-final-form";
 import Label from "./Label";
 

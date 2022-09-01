@@ -3,7 +3,7 @@ import {
   required,
   composeValidators,
   mustBeEmail,
-} from "../../utils/validation";
+} from "../../utilities/validation";
 import Label from "./Label";
 
 export function EmailForm(props) {

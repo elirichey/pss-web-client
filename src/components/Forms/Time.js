@@ -1,9 +1,9 @@
 import { Form, Field } from "react-final-form";
-import { required } from "../../utils/validation";
+import { required } from "../../utilities/validation";
 import Label from "./Label";
 
 export function TimeForm(props) {
-  const onSubmit = async (values) => console.log("Submit Text:::", values.text);
+  const onSubmit = async (values) => console.log("Submit Text:::", values);
 
   return (
     <Form
@@ -12,7 +12,7 @@ export function TimeForm(props) {
       render={({ handleSubmit, form, submitting, pristine, values }) => (
         <form onSubmit={handleSubmit}>
           <Time
-            name="text"
+            name="time"
             label="Time *"
             initialValue="16:20"
             validate={required}

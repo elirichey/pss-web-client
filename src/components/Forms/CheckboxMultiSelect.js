@@ -32,15 +32,18 @@ export function CheckboxMultiSelectForm(props) {
 }
 
 export default function CheckboxMultiSelect(props) {
-  const { name, options, multiple, initialValues } = props;
+  const { name, options, multiple, initialValues, setSelectedOptions, values } =
+    props;
 
   return options.map((item, i) => {
     return (
       <Field
         name={name}
         value={item}
+        initialValue={initialValues}
         type="checkbox"
-        multiple={multiple}
+        component="checkbox"
+        multiple={true}
         key={i}
       >
         {({ input, meta }) => (
@@ -55,7 +58,24 @@ export default function CheckboxMultiSelect(props) {
                 {...input}
                 type="checkbox"
                 className="checkbox"
+                required={false}
                 checked={initialValues.some((x) => x === item)}
+                onChange={(e) => {
+                  const isSelected = initialValues.some((x) => x === item);
+
+                  let newOptions = [...initialValues];
+                  const { value } = e.target;
+
+                  if (!isSelected) {
+                    newOptions.push(value);
+                    setSelectedOptions(newOptions);
+                    return input.onChange(newOptions);
+                  } else {
+                    const less = newOptions.filter((x) => x !== value);
+                    setSelectedOptions(less);
+                    return input.onChange(less);
+                  }
+                }}
               />
             </label>
           </div>

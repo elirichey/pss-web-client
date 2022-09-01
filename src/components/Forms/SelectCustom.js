@@ -5,7 +5,7 @@ import {
   required,
   composeValidators,
   cannotBeValue,
-} from "../../utils/validation";
+} from "../../utilities/validation";
 
 export function SelectCustomForm(props) {
   const [showOptions, setShowOptions] = useState(false);
@@ -81,55 +81,69 @@ export default function SelectCustom(props) {
         {/* Hidden Input */}
         <Field name={name} validate={validate} initialValue={selected}>
           {({ input, meta }) => (
-            <div className="input-field">
-              <Label
-                name={name}
-                label={label}
-                hasError={meta.error && meta.touched}
-              />
-              <input
-                {...input}
-                type="hidden" // REQUIRED FOR CUSTOM SELECT
-                required={true}
-              />
-            </div>
+            <>
+              <div className="input-field">
+                <Label
+                  name={name}
+                  label={label}
+                  hasError={meta.error && meta.touched}
+                />
+                <input
+                  {...input}
+                  type="hidden" // REQUIRED FOR CUSTOM SELECT
+                  required={true}
+                />
+              </div>
+
+              <div className="select-input-container">
+                {/* Main Selector */}
+                <span
+                  className="select-input"
+                  onClick={() => setShowOptions(!showOptions)}
+                >
+                  {selected}
+                  <span
+                    className={
+                      showOptions
+                        ? "indicator open clickable"
+                        : "indicator clickable"
+                    }
+                  >
+                    {`«`}
+                  </span>
+                </span>
+
+                {/* List dropdown */}
+                {showOptions ? (
+                  <div className="list-options">
+                    <ul>
+                      {options.map((item, i) => {
+                        return (
+                          <li className="option" key={i}>
+                            <span
+                              className={
+                                item === selected
+                                  ? "clickable active "
+                                  : "clickable"
+                              }
+                              onClick={() => {
+                                setSelected(item);
+                                setShowOptions(false);
+                                input.onChange(item);
+                              }}
+                            >
+                              {item}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+            </>
           )}
         </Field>
-
-        <div className="select-input-container">
-          {/* Main Selector */}
-          <button
-            className="select-input"
-            onClick={() => setShowOptions(!showOptions)}
-          >
-            {selected}
-            <span className={showOptions ? "indicator open" : "indicator"}>
-              {`«`}
-            </span>
-          </button>
-
-          {/* List dropdown */}
-          {showOptions ? (
-            <div className="list-options">
-              <ul>
-                {options.map((item, i) => {
-                  return (
-                    <li className="option" key={i}>
-                      <button
-                        onClick={() => {
-                          setSelected(item);
-                          setShowOptions(false);
-                        }}
-                      >
-                        {item}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ) : null}
-        </div>
       </div>
 
       {/* List Dropdown - Background Listener */}

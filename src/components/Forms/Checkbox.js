@@ -30,7 +30,12 @@ export default function Checkbox(props) {
   const { name, label, initialValue } = props;
 
   return (
-    <Field name={name} type="checkbox" initialValue={initialValue}>
+    <Field
+      name={name}
+      type="checkbox"
+      component="checkbox"
+      initialValue={initialValue}
+    >
       {({ input, meta }) => (
         <div className="checkbox-field">
           <label className={meta.error ? "field-label-error" : "field-label"}>

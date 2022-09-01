@@ -1,9 +1,9 @@
 import { Form, Field } from "react-final-form";
-import { required } from "../../utils/validation";
+import { required } from "../../utilities/validations/validation";
 import Label from "./Label";
 
 export function DateForm(props) {
-  const onSubmit = async (values) => console.log("Submit Text:::", values.text);
+  const onSubmit = async (values) => console.log("Submit Text:::", values.date);
 
   return (
     <Form
@@ -12,7 +12,7 @@ export function DateForm(props) {
       render={({ handleSubmit, form, submitting, pristine, values }) => (
         <form onSubmit={handleSubmit}>
           <Date
-            name="text"
+            name="date"
             label="Date *"
             initialValue="1990-12-13"
             validate={required}
