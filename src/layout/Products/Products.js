@@ -28,7 +28,6 @@ export default function Products(props) {
       if (res.status === 200) {
         setProducts(res.data.products);
         setProductsCount(res.data.length);
-        console.log("Got Products:", res.data);
         setTimeout(() => setLoading(false), 750);
         return res.data;
       } else {
@@ -108,6 +107,8 @@ export default function Products(props) {
     return await getAllProducts(totalPages - 1);
   };
 
+  const totalPages = Math.ceil(productsCount / 50);
+
   return (
     <>
       <div id="products-sidebar">Sidebar</div>
@@ -123,7 +124,7 @@ export default function Products(props) {
           goToPage={goToPage}
           goFirst={goFirst}
           goLast={goLast}
-          totalPages={Math.round(productsCount / 50)}
+          totalPages={totalPages}
         />
       </div>
     </>

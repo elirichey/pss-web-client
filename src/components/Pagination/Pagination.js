@@ -48,7 +48,7 @@ export default function Pagination(props) {
   const renderNextButtons = () => {
     return (
       <>
-        {currentPage < totalPages ? (
+        {currentPage <= totalPages - 1 ? (
           <button onClick={() => goToPage(currentPage + 1)}>
             {currentPage + 1}
           </button>
