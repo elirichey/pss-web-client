@@ -9,12 +9,6 @@ export default function Products(props) {
     if (products.length === 0) getAllProducts(1);
     return () => {
       setProducts([]);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (products.length === 0) getTotalNumberOfProducts();
-    return () => {
       setProductsCount(0);
     };
   }, []);
@@ -32,7 +26,8 @@ export default function Products(props) {
     try {
       const res = await ProductsHttp.getProducts(page);
       if (res.status === 200) {
-        setProducts(res.data);
+        setProducts(res.data.products);
+        setProductsCount(res.data.length);
         console.log("Got Products:", res.data);
         setTimeout(() => setLoading(false), 750);
         return res.data;
@@ -43,23 +38,6 @@ export default function Products(props) {
     } catch (e) {
       console.log("Products: getAllProducts -Catch Error:", res);
       setTimeout(() => setLoading(false), 750);
-    }
-  };
-
-  const getTotalNumberOfProducts = async () => {
-    try {
-      const res = await ProductsHttp.getTotalNumberOfProducts();
-      console.log("Got Product Length:", res.data);
-      if (res.status === 200) setProductsCount(res.data);
-      else {
-        console.log(
-          "Products: getTotalNumberOfProducts - Non-200 Reponse:",
-          res
-        );
-      }
-    } catch (e) {
-      const { data } = e.response;
-      console.log("Products: getTotalNumberOfProducts - Catch Error:", data);
     }
   };
 

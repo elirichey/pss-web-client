@@ -40,17 +40,10 @@ const getProductById = async (id) => {
     .catch((error) => error);
 };
 
-const getTotalNumberOfProducts = async () => {
-  return Axios.get(`${API_URL}/products/count`)
-    .then((res) => res)
-    .catch((error) => error);
-};
-
 const ProductsHttp = {
   getProducts,
   searchProducts,
   getProductById,
-  getTotalNumberOfProducts,
 };
 
 export default ProductsHttp;
