@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ListProducts from "../../components/List/ListProducts";
 import Pagination from "../../components/Pagination/Pagination";
 import ProductsHttp from "../../utilities/http/products";
 
@@ -86,25 +87,30 @@ export default function Products(props) {
   const goNext = async () => {
     const newPage = currentPage + 1;
     setCurrentPage(newPage);
-    return await getAllProducts(newPage);
+    await getAllProducts(newPage);
+    return scroll(0, 0);
   };
   const goPrevious = async () => {
     const newPage = currentPage - 1;
     setCurrentPage(newPage);
-    return await getAllProducts(newPage);
+    await getAllProducts(newPage);
+    return scroll(0, 0);
   };
   const goToPage = async (page) => {
     setCurrentPage(page);
-    return await getAllProducts(page);
+    await getAllProducts(page);
+    return scroll(0, 0);
   };
   const goFirst = async () => {
     setCurrentPage(1);
-    return await getAllProducts(1);
+    await getAllProducts(1);
+    return scroll(0, 0);
   };
   const goLast = async () => {
     const totalPages = Math.round(productsCount / 50);
     setCurrentPage(totalPages - 1);
-    return await getAllProducts(totalPages - 1);
+    await getAllProducts(totalPages - 1);
+    return scroll(0, 0);
   };
 
   const totalPages = Math.ceil(productsCount / 50);
@@ -115,7 +121,7 @@ export default function Products(props) {
       <div id="products-body">
         <h1>PRODUCTS</h1>
 
-        <br />
+        <ListProducts products={products} />
 
         <Pagination
           currentPage={currentPage}
