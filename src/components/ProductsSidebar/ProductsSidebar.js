@@ -36,49 +36,52 @@ export default function ProductsSidebar(props) {
           <form onSubmit={handleSubmit}>
             <div className="products-sidebar-title">
               <h3>FILTER OPTIONS</h3>
+
               <span
                 className="reset"
                 onClick={() => reset(form)}
               >{`[ RESET ]`}</span>
             </div>
 
-            <div className="row pb-15">
-              <Input
-                name="keyword"
-                label="SEARCH BY KEYWORD"
-                initialValue={searchKeyword}
-                placeholder="Search..."
-                required={false}
-                disabled={false}
-              />
-            </div>
+            <div className="products-sidebar-body">
+              <div className="row pb-15">
+                <Input
+                  name="keyword"
+                  label="SEARCH BY KEYWORD"
+                  initialValue={searchKeyword}
+                  placeholder="Search..."
+                  required={false}
+                  disabled={false}
+                />
+              </div>
 
-            <div className="row py-15 z-index">
-              <SelectCustom
-                name="manufacturer"
-                label="MANUFACTURER"
-                options={manufacturers.sort((a, b) => a.localeCompare(b))}
-                values={values}
-                selected={searchManufacturer}
-                setSelected={setSearchManufacturer}
-                validate={null}
-                showOptions={showManufacturerOptions}
-                setShowOptions={setShowManufacturerOptions}
-              />
-            </div>
+              <div className="row py-15 z-index">
+                <SelectCustom
+                  name="manufacturer"
+                  label="MANUFACTURER"
+                  options={manufacturers.sort((a, b) => a.localeCompare(b))}
+                  values={values}
+                  selected={searchManufacturer}
+                  setSelected={setSearchManufacturer}
+                  validate={null}
+                  showOptions={showManufacturerOptions}
+                  setShowOptions={setShowManufacturerOptions}
+                />
+              </div>
 
-            <div className="row py-15">
-              <SelectCustom
-                name="type"
-                label="TYPE"
-                options={types.sort((a, b) => a.localeCompare(b))}
-                values={values}
-                selected={searchType}
-                setSelected={setSearchType}
-                validate={null}
-                showOptions={showTypeOptions}
-                setShowOptions={setShowTypeOptions}
-              />
+              <div className="row py-15">
+                <SelectCustom
+                  name="type"
+                  label="TYPE"
+                  options={types.sort((a, b) => a.localeCompare(b))}
+                  values={values}
+                  selected={searchType}
+                  setSelected={setSearchType}
+                  validate={null}
+                  showOptions={showTypeOptions}
+                  setShowOptions={setShowTypeOptions}
+                />
+              </div>
             </div>
 
             <div className="submit-container">
@@ -87,7 +90,7 @@ export default function ProductsSidebar(props) {
                 type="submit"
                 disabled={submitting}
               >
-                Submit
+                SEARCH PRODUCTS
               </button>
             </div>
           </form>

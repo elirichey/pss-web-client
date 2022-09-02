@@ -1,5 +1,6 @@
 #products-pagination
   display: flex
+  padding-left: 15px
   margin-top: 30px
   button
     height: 40px
@@ -38,3 +39,8 @@
     &:hover
       border-color: transparent
       color: $red
+
+@media (max-width: 1034px)
+  #products-pagination
+    padding-left: 0px
+    justify-content: center

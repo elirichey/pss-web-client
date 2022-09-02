@@ -2,7 +2,7 @@
   display: flex
   position: sticky // NEW
   top: 162px // NEW // 132px Header
-  height: 500px // calc(100vh - 192px)
+  height: 440px // calc(100vh - 192px)
   width: 360px
   background-color: $white
   padding: 30px
@@ -28,6 +28,9 @@
       margin-bottom: 0
       &:hover
         color: $red
+  .products-sidebar-body
+    display: flex
+    flex-direction: column
   .z-index
     position: relative
     z-index: 100
@@ -46,6 +49,19 @@
       width: 100%
       .option
         width: 100%
+  .submit-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 40px
+    width: 180px
+    font-weight: 500
+    background-color: transparent
+    border: solid 2px $light
+    margin-left: auto
+    margin-right: auto
+    &:hover
+      border-color: $red
 
 @media (max-width: 1034px)
   #products-sidebar
@@ -55,3 +71,21 @@
     top: unset
     margin-left: 30px
     margin-right: 30px
+    margin-bottom: 0px
+    .products-sidebar-body
+      flex-direction: row
+      padding-bottom: 15px
+      .row
+        flex: 1
+      .pb-15
+        padding-bottom: 0
+        padding-right: 15px
+      .py-15
+        padding-top: 0
+        padding-bottom: 0
+        padding-left: 15px
+        padding-right: 15px
+        &:last-child
+          padding-right: 0
+    .submit-btn
+      margin-bottom: 10px

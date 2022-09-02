@@ -4,6 +4,8 @@
 #products
   flex: 1
   display: flex
+  .mobile-h1
+    display: none
 
 #products-body
   flex: 1
@@ -20,6 +22,10 @@
 @media (max-width: 1034px)
   #products
     flex-direction: column
+    .mobile-h1
+      display: flex
+      padding-top: 10px
+      margin: auto
   #products-body
-    h1
-      margin: auto auto 30px
+    .desktop-h1
+      display: none

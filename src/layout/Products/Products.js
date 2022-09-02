@@ -125,6 +125,8 @@ export default function Products(props) {
 
   return (
     <>
+      <h1 className="mobile-h1">ALL PRODUCTS</h1>
+
       <ProductsSidebar
         reset={resetSearch}
         onSubmit={submitSearch}
@@ -141,7 +143,7 @@ export default function Products(props) {
       />
 
       <div id="products-body">
-        <h1>ALL PRODUCTS</h1>
+        <h1 className="desktop-h1">ALL PRODUCTS</h1>
 
         <ListProducts products={products} />
 
