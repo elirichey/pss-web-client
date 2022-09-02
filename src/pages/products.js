@@ -20,7 +20,7 @@ export default function ProductsPage() {
       <main>
         <Header alt={false} />
 
-        <section id="procucts" className="body">
+        <section id="products" className="body">
           <Products />
         </section>
       </main>

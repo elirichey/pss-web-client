@@ -1,0 +1,20 @@
+#products-sidebar
+  display: flex
+  position: sticky // NEW
+  top: 162px // NEW // 132px Header
+  height: calc(100vh - 192px)
+  width: 360px
+  background-color: $white
+  padding: 30px
+  margin-top: 30px
+  margin-bottom: 30px
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1)
+
+@media (max-width: 1034px)
+  #products-sidebar
+    height: unset
+    position: relative
+    width: calc(100% - 60px)
+    top: unset
+    margin-left: 30px
+    margin-right: 30px

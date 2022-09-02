@@ -22,18 +22,20 @@ export default function RenderProduct(props) {
   const image = images ? JSON.parse(images)[0] : null;
   const categoriesArray = categories ? JSON.parse(categories).categories : [];
 
-  const imgSrc = image ? image : "/image/logo-fleet.png";
+  const imgSrc = image ? image : "/image/placeholders/no-image.jpg";
 
   return (
     <li className="list-product-item">
-      <Link href={"#"}>
+      <Link href={`/product/${id}`}>
         <a>
           <div className="image-container">
             <Image src={imgSrc} layout="fill" objectFit="contain" />
           </div>
 
           <div className="text-container">
-            <span className="product-name">{name}</span>
+            <span className="product-name">
+              <span>{name}</span>
+            </span>
             <span className="product-manufacturer">{manufacturer}</span>
             <span className="product-type">{type}</span>
           </div>

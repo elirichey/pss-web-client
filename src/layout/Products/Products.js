@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ListProducts from "../../components/List/ListProducts";
 import Pagination from "../../components/Pagination/Pagination";
 import ProductsHttp from "../../utilities/http/products";
+import ProductsSidebar from "../../components/ProductsSidebar/ProductsSidebar";
 
 export default function Products(props) {
   // *************** Lifecycle *************** //
@@ -117,9 +118,10 @@ export default function Products(props) {
 
   return (
     <>
-      <div id="products-sidebar">Sidebar</div>
+      <ProductsSidebar />
+
       <div id="products-body">
-        <h1>PRODUCTS</h1>
+        <h1>ALL PRODUCTS</h1>
 
         <ListProducts products={products} />
 
