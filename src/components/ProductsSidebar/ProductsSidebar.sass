@@ -2,13 +2,50 @@
   display: flex
   position: sticky // NEW
   top: 162px // NEW // 132px Header
-  height: calc(100vh - 192px)
+  height: 500px // calc(100vh - 192px)
   width: 360px
   background-color: $white
   padding: 30px
   margin-top: 30px
   margin-bottom: 30px
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1)
+  .products-sidebar-title
+    display: flex
+    margin-bottom: 30px
+    border-bottom: solid 2px $light
+    h3
+      flex: 1
+      font-weight: 500
+      padding-bottom: 25px
+      margin-top: 0
+      margin-bottom: 0
+    .reset
+      font-size: 14px
+      font-weight: 500
+      cursor: pointer
+      color: $gray
+      margin-top: 5px
+      margin-bottom: 0
+      &:hover
+        color: $red
+  .z-index
+    position: relative
+    z-index: 100
+  form
+    width: 100%
+  .input-field
+    width: 100%
+    .text-input
+      padding-left: 10px
+      border-bottom-color: $light
+  .select-input-container
+    .select-input
+      width: 100%
+      border-bottom-color: $light
+    .list-options
+      width: 100%
+      .option
+        width: 100%
 
 @media (max-width: 1034px)
   #products-sidebar

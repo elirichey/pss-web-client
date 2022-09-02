@@ -44,22 +44,28 @@ export default function Products(props) {
 
   // *************** Search *************** //
 
-  const [searchName, setSearchName] = useState("");
-  const [searchManufacturer, setSearchManufacturer] = useState("");
-  const [searchType, setSearchType] = useState("");
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [searchManufacturer, setSearchManufacturer] = useState("(Select)");
+  const [searchType, setSearchType] = useState("(Select)");
+  const [showManufacturerOptions, setShowManufacturerOptions] = useState(false);
+  const [showTypeOptions, setShowTypeOptions] = useState(false);
   const resetSearch = async (form) => {
     setIsSearch(false);
-    setSearchName("");
-    setSearchManufacturer("");
-    setSearchType("");
-    await goFirst();
+    setSearchKeyword("");
+    setSearchManufacturer("(Select)");
+    setSearchType("(Select)");
+    setShowManufacturerOptions(false);
+    setShowTypeOptions(false);
+    // await goFirst();
     return form.reset();
   };
 
   const submitSearch = async (queries) => {
+    console.log("Submit Values: ", queries);
+    /*
     const { active, hasImages, manufacturer, name, type } = queries;
 
-    if (name && name.trim() !== "") setSearchName(name);
+    if (name && name.trim() !== "") setSearchKeyword(name);
     if (manufacturer && manufacturer.trim() !== "")
       setSearchManufacturer(manufacturer);
     if (type && type.trim() !== "") setSearchType(type);
@@ -80,6 +86,7 @@ export default function Products(props) {
       console.log("Products: submitSearch - Catch Error:", data);
       setTimeout(() => setLoading(false), 750);
     }
+    */
   };
 
   // *************** Pagination *************** //
@@ -118,7 +125,20 @@ export default function Products(props) {
 
   return (
     <>
-      <ProductsSidebar />
+      <ProductsSidebar
+        reset={resetSearch}
+        onSubmit={submitSearch}
+        searchKeyword={searchKeyword}
+        setSearchKeyword={setSearchKeyword}
+        searchManufacturer={searchManufacturer}
+        setSearchManufacturer={setSearchManufacturer}
+        searchType={searchType}
+        setSearchType={setSearchType}
+        showManufacturerOptions={showManufacturerOptions}
+        setShowManufacturerOptions={setShowManufacturerOptions}
+        showTypeOptions={showTypeOptions}
+        setShowTypeOptions={setShowTypeOptions}
+      />
 
       <div id="products-body">
         <h1>ALL PRODUCTS</h1>

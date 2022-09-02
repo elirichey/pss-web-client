@@ -91,11 +91,7 @@ export default function Footer(props) {
           <div id="footer-logo" className="column">
             <Link href="/">
               <a>
-                <Image
-                  src="/image/logo-text-white.svg"
-                  height={33}
-                  width={120}
-                />
+                <Image src="/svg/logo-text-white.svg" height={33} width={120} />
               </a>
             </Link>
           </div>
@@ -112,7 +108,7 @@ export default function Footer(props) {
               target="_blank"
               className="social-icon"
             >
-              <Image src="/image/social/facebook.svg" height={24} width={24} />
+              <Image src="/svg/social/facebook.svg" height={24} width={24} />
             </a>
           </div>
         </div>
