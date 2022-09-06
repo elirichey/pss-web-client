@@ -10,24 +10,22 @@ const getProducts = async (pg) => {
 };
 
 const searchProducts = async (queries) => {
-  const { name, manufacturer, type } = queries;
+  const { keyword, manufacturer, type } = queries;
 
   let queryString = `?`;
-  if (name) {
-    queryString = `${queryString}name=${encodeURIComponent(name)}`;
+  if (keyword) {
+    queryString = `${queryString}keyword=${encodeURIComponent(keyword)}`;
   }
-  if (manufacturer) {
+  if (manufacturer && manufacturer.trim() !== "(Select)") {
     const hasQueries = queryString !== `?` ? `${queryString}&` : queryString;
     queryString = `${hasQueries}manufacturer=${encodeURIComponent(
       manufacturer
     )}`;
   }
-  if (type) {
+  if (type && type.trim() !== "(Select)") {
     const hasQueries = queryString !== `?` ? `${queryString}&` : queryString;
     queryString = `${hasQueries}type=${encodeURIComponent(type)}`;
   }
-
-  if (queryString === `?`) return alert("Search Query Cannot Be Empty");
 
   return Axios.get(`${API_URL}/products/search${queryString}`)
     .then((res) => res)

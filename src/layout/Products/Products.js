@@ -37,7 +37,7 @@ export default function Products(props) {
         setTimeout(() => setLoading(false), 750);
       }
     } catch (e) {
-      console.log("Products: getAllProducts -Catch Error:", res);
+      console.log("Products: getAllProducts -Catch Error:", e);
       setTimeout(() => setLoading(false), 750);
     }
   };
@@ -61,14 +61,20 @@ export default function Products(props) {
   };
 
   const submitSearch = async (queries) => {
+    const { keyword, manufacturer, type } = queries;
     console.log("Submit Values: ", queries);
-    /*
-    const { active, hasImages, manufacturer, name, type } = queries;
 
-    if (name && name.trim() !== "") setSearchKeyword(name);
-    if (manufacturer && manufacturer.trim() !== "")
+    const noKeyword = keyword.trim() === "";
+    const noMenufacturer =
+      manufacturer.trim() === "" || manufacturer.trim() === "(Select)";
+    const noType = type.trim() === "" || type.trim() === "(Select)";
+    const noSearch = noKeyword && noMenufacturer && noType;
+    if (noSearch) return await getAllProducts(1);
+
+    if (keyword && keyword.trim() !== "") setSearchKeyword(keyword);
+    if (manufacturer && manufacturer.trim() !== "(Select)")
       setSearchManufacturer(manufacturer);
-    if (type && type.trim() !== "") setSearchType(type);
+    if (type && type.trim() !== "(Select)") setSearchType(type);
 
     setLoading(true);
     setIsSearch(true);
@@ -76,17 +82,17 @@ export default function Products(props) {
       const res = await ProductsHttp.searchProducts(queries);
       if (res.status === 200) {
         setProducts(res.data);
+        setProductsCount(res.data.length);
+        setCurrentPage(1);
         setTimeout(() => setLoading(false), 750);
       } else {
         console.log("Products: submitSearch - Non-200 Reponse:", res);
         setTimeout(() => setLoading(false), 750);
       }
     } catch (e) {
-      const { data } = e.response;
-      console.log("Products: submitSearch - Catch Error:", data);
+      console.log("Products: submitSearch - Catch Error:", e);
       setTimeout(() => setLoading(false), 750);
     }
-    */
   };
 
   // *************** Pagination *************** //
