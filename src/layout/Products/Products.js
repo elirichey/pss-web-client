@@ -8,11 +8,9 @@ export default function Products(props) {
   // *************** Lifecycle *************** //
 
   useEffect(() => {
+    const controller = new AbortController();
     if (products.length === 0) getAllProducts(1);
-    return () => {
-      setProducts([]);
-      setProductsCount(0);
-    };
+    return () => controller.abort();
   }, []);
 
   // *************** HTTP Requests *************** //
@@ -64,7 +62,7 @@ export default function Products(props) {
     const { keyword, manufacturer, type } = queries;
     console.log("Submit Values: ", queries);
 
-    const noKeyword = keyword.trim() === "";
+    const noKeyword = keyword ? keyword.trim() === "" : null;
     const noMenufacturer =
       manufacturer.trim() === "" || manufacturer.trim() === "(Select)";
     const noType = type.trim() === "" || type.trim() === "(Select)";
