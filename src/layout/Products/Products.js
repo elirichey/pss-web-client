@@ -30,12 +30,8 @@ export default function Products(props) {
         setProductsCount(res.data.length);
         setTimeout(() => setLoading(false), 750);
         return res.data;
-      } else {
-        console.log("Products: getAllProducts - Non-200 Reponse:", res);
-        setTimeout(() => setLoading(false), 750);
-      }
+      } else setTimeout(() => setLoading(false), 750);
     } catch (e) {
-      console.log("Products: getAllProducts -Catch Error:", e);
       setTimeout(() => setLoading(false), 750);
     }
   };
@@ -60,7 +56,6 @@ export default function Products(props) {
 
   const submitSearch = async (queries) => {
     const { keyword, manufacturer, type } = queries;
-    console.log("Submit Values: ", queries);
 
     const noKeyword = keyword ? keyword.trim() === "" : null;
     const noMenufacturer =
@@ -83,12 +78,8 @@ export default function Products(props) {
         setProductsCount(res.data.length);
         setCurrentPage(1);
         setTimeout(() => setLoading(false), 750);
-      } else {
-        console.log("Products: submitSearch - Non-200 Reponse:", res);
-        setTimeout(() => setLoading(false), 750);
-      }
+      } else setTimeout(() => setLoading(false), 750);
     } catch (e) {
-      console.log("Products: submitSearch - Catch Error:", e);
       setTimeout(() => setLoading(false), 750);
     }
   };

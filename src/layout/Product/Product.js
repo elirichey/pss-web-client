@@ -25,12 +25,11 @@ export default function Product(props) {
 
   const attribute = JSON.parse(attributes)["attribute"];
   const size = JSON.parse(attributes)["size"];
-  console.log("List:", attribute);
 
   const cats = categories ? JSON.parse(categories)["categories"] : [];
 
   return (
-    <div className="container mb-30">
+    <div className="container-md mb-30">
       <div className="column pb-15">
         <div className="row">
           <p>Breadcrumbs</p>
@@ -72,13 +71,13 @@ export default function Product(props) {
             <div className="row my-15">
               <div className="column">
                 <p className="normal opacity-50">
-                  <b>DESCRIPTION:</b>
+                  <b>OVERVIEW:</b>
                 </p>
                 <p className="description">{description}</p>
               </div>
             </div>
 
-            {attribute || size ? (
+            {type || attribute || size ? (
               <div className="row my-15">
                 <div className="column">
                   <ul className="list-attributes">
