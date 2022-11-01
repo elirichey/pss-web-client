@@ -29,13 +29,27 @@
     padding-top: 15px
     padding-bottom: 15px
   .price
+    display: flex
+    align-items: flex-end
     font-size: 24px
     font-weight: 500
+    padding-bottom: 5px
+    margin-top: 0
   .add-to-cart-container
     display: flex
     align-items: center
-    margin-top: 10px
     margin-left: 60px
+    form
+      display: flex
+      align-items: flex-end
+      .input-field
+        max-width: 60px
+        text-align: center
+        margin-right: 30px
+      .text-input
+        text-align: center
+        padding-left: 10px
+        padding-right: 0
     .add-to-cart-btn
       display: flex
       align-items: center
@@ -47,8 +61,13 @@
       cursor: pointer
       font-weight: 500
       padding-bottom: 3px
+      border: none
       &:hover
         background-color: $blue
+      &.disabled
+        opacity: 0.25
+        &:hover
+          background-color: $black
   .product-type
   .description
   .list-attributes

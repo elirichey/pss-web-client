@@ -1,6 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
+import { Form } from "react-final-form";
+import Number from "../../components/Forms/Number";
+import { mustBeGreaterOrEqualToZero } from "../../utilities/validation";
 import { formatToDollars } from "../../utilities/conversions/format-currency";
+import { useEffect, useState } from "react";
 
 export default function Product(props) {
   const { product } = props;
@@ -27,6 +30,65 @@ export default function Product(props) {
   const size = JSON.parse(attributes)["size"];
 
   const cats = categories ? JSON.parse(categories)["categories"] : [];
+
+  const [initialQuantity, setInitialQuantity] = useState("0");
+  useEffect(() => setValueOnLoad(), []);
+  const setValueOnLoad = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    if (cartItems) {
+      const productIncluded = cartItems.some((x) => x.id === product.id);
+      if (productIncluded) {
+        const value = cartItems.find((x) => x.id === product.id);
+        setInitialQuantity(value.quantity);
+      }
+    }
+  };
+
+  const addToCart = (vals) => {
+    const { quantity } = vals;
+    const addProduct = { id: product.id, quantity, product };
+
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    let newCart = [];
+
+    if (cartItems && cartItems.length > 0) {
+      const productIncluded = cartItems.some((x) => x.id === product.id);
+
+      if (productIncluded) {
+        const noUpdates = cartItems.some(
+          (x) => x.id === product.id && x.quantity === quantity
+        );
+
+        if (noUpdates) return;
+        else {
+          if (quantity > 0) {
+            cartItems.map((x) => {
+              if (x.id !== product.id) newCart.push(x);
+            });
+            newCart.push(addProduct);
+          } else {
+            cartItems.map((x) => {
+              if (x.id !== product.id) newCart.push(x);
+            });
+          }
+        }
+      } else {
+        if (quantity > 0) {
+          cartItems.map((x) => newCart.push(x));
+          newCart.push(addProduct);
+        } else return;
+      }
+    } else {
+      if (quantity > 0) newCart.push(addProduct);
+      else return;
+    }
+    if (newCart !== cartItems) {
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
+      window.dispatchEvent(new Event("storage"));
+    } else return;
+  };
+
+  const removeFromCart = (id) => {};
 
   return (
     <div className="container-md mb-30">
@@ -55,7 +117,46 @@ export default function Product(props) {
                 <p className="price">{formatToDollars(price)}</p>
 
                 <div className="add-to-cart-container">
-                  <div className="add-to-cart-btn">Add to Cart</div>
+                  <Form
+                    onSubmit={addToCart}
+                    initialValues={{ quantity: initialQuantity }}
+                    render={({
+                      handleSubmit,
+                      form,
+                      submitting,
+                      pristine,
+                      values,
+                    }) => (
+                      <form onSubmit={handleSubmit}>
+                        <Number
+                          name="quantity"
+                          label="Quantity *"
+                          placeholder="0"
+                          validate={mustBeGreaterOrEqualToZero}
+                          type="number"
+                          step="1"
+                          min="0"
+                          max="10"
+                          required={true}
+                          disabled={false}
+                        />
+
+                        <div className="submit-container">
+                          <button
+                            className={
+                              submitting
+                                ? "add-to-cart-btn disabled"
+                                : "add-to-cart-btn"
+                            }
+                            type="submit"
+                            disabled={submitting}
+                          >
+                            Add to Cart
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  />
                 </div>
               </div>
             ) : null}

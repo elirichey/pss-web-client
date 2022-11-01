@@ -42,6 +42,7 @@ export default function Input(props) {
     label,
     validate,
     required,
+    type,
     placeholder,
     initialValue,
     disabled,
@@ -58,7 +59,7 @@ export default function Input(props) {
           />
           <input
             {...input}
-            type="text"
+            type={type ? type : "text"}
             placeholder={placeholder}
             className="text-input"
             required={required}

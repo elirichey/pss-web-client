@@ -31,6 +31,11 @@ export const cannotBeValue = async (val) => {
   else return undefined;
 };
 
+export const mustBeGreaterOrEqualToZero = async (val) => {
+  if (val <= -1) return `Cannot be less than zero`;
+  else return undefined;
+};
+
 // Password
 // - Validation lives in the password input file
 //   because it also updates state for checking
