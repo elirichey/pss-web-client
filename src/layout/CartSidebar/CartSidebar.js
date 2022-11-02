@@ -65,9 +65,7 @@ export default function CartSidebar(props) {
             </div>
 
             <div className="row">
-              <button className="complete-quote-btn">
-                Complete Quote Submission
-              </button>
+              <button className="complete-quote-btn">Request Quote</button>
             </div>
           </div>
         ) : null}
