@@ -35,10 +35,10 @@
     font-weight: 500
     padding-bottom: 5px
     margin-top: 0
+    margin-right: 60px
   .add-to-cart-container
     display: flex
     align-items: center
-    margin-left: 60px
     form
       display: flex
       align-items: flex-end
@@ -60,6 +60,7 @@
       color: $white
       cursor: pointer
       font-weight: 500
+      font-size: 14px
       padding-bottom: 3px
       border: none
       &:hover
@@ -68,6 +69,22 @@
         opacity: 0.25
         &:hover
           background-color: $black
+    .remove-from-cart-btn
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 40px
+      width: 80px
+      background-color: $red
+      color: $white
+      cursor: pointer
+      font-weight: 500
+      font-size: 14px
+      padding-bottom: 3px
+      margin-left: 15px
+      border: none
+      &:hover
+        background-color: $blue
   .product-type
   .description
   .list-attributes
@@ -100,6 +117,22 @@
     margin-right: 0
     margin-bottom: 30px
 
+@media (max-width: 540px)
+  .product-overview
+    .title
+      font-size: 27px
+      text-align: center
+    .add-to-cart-container
+      flex: 1
+      form
+        flex: 1
+        align-items: center
+        flex-direction: column
+      .input-field
+        margin-right: 0
+      .submit-container
+        margin-top: 30px
+
 @media (max-width: 480px)
   .product-body
     display: flex
@@ -118,6 +151,8 @@
     flex-direction: column
     align-items: center
     justify-content: center
+    padding-top: 0 !important
+    margin-top: 0
   .add-to-cart-container
     margin-top: 30px !important
     margin-left: 0 !important

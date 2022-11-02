@@ -32,14 +32,22 @@ export default function Product(props) {
   const cats = categories ? JSON.parse(categories)["categories"] : [];
 
   const [initialQuantity, setInitialQuantity] = useState("0");
-  useEffect(() => setValueOnLoad(), []);
+
+  useEffect(() => {
+    setValueOnLoad();
+    window.addEventListener("storage", isIncludedInCart);
+    return () => window.removeEventListener("storage", isIncludedInCart);
+  }, []);
+
   const setValueOnLoad = () => {
-    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    if (cartItems) {
-      const productIncluded = cartItems.some((x) => x.id === product.id);
-      if (productIncluded) {
-        const value = cartItems.find((x) => x.id === product.id);
-        setInitialQuantity(value.quantity);
+    if (typeof window !== "undefined") {
+      const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+      if (cartItems) {
+        const productIncluded = cartItems.some((x) => x.id === product.id);
+        if (productIncluded) {
+          const value = cartItems.find((x) => x.id === product.id);
+          setInitialQuantity(value.quantity);
+        }
       }
     }
   };
@@ -88,7 +96,30 @@ export default function Product(props) {
     } else return;
   };
 
-  const removeFromCart = (id) => {};
+  const removeCartItem = (id, form) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    const productIncluded = cartItems.some((x) => x.id === id);
+
+    if (productIncluded) {
+      let newCart = [];
+      cartItems.map((x) => (x.id !== id ? newCart.push(x) : null));
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
+      window.dispatchEvent(new Event("storage"));
+    }
+
+    form.reset();
+    setInitialQuantity("0");
+  };
+
+  const [includedInArt, setIncludedInCart] = useState(false);
+  const isIncludedInCart = () => {
+    if (typeof window !== "undefined") {
+      const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+      const productIncluded = cartItems && cartItems.some((x) => x.id === id);
+      if (productIncluded) return setIncludedInCart(true);
+      else return setIncludedInCart(false);
+    }
+  };
 
   return (
     <div className="container-md mb-30">
@@ -114,8 +145,6 @@ export default function Product(props) {
 
             {showPrice ? (
               <div className="row mt-15 price-container">
-                <p className="price">{formatToDollars(price)}</p>
-
                 <div className="add-to-cart-container">
                   <Form
                     onSubmit={addToCart}
@@ -128,18 +157,22 @@ export default function Product(props) {
                       values,
                     }) => (
                       <form onSubmit={handleSubmit}>
-                        <Number
-                          name="quantity"
-                          label="Quantity *"
-                          placeholder="0"
-                          validate={mustBeGreaterOrEqualToZero}
-                          type="number"
-                          step="1"
-                          min="0"
-                          max="10"
-                          required={true}
-                          disabled={false}
-                        />
+                        <div className="row">
+                          <p className="price">{formatToDollars(price)}</p>
+
+                          <Number
+                            name="quantity"
+                            label="Quantity *"
+                            placeholder="0"
+                            validate={mustBeGreaterOrEqualToZero}
+                            type="number"
+                            step="1"
+                            min="0"
+                            max="10"
+                            required={true}
+                            disabled={false}
+                          />
+                        </div>
 
                         <div className="submit-container">
                           <button
@@ -153,6 +186,15 @@ export default function Product(props) {
                           >
                             Add to Cart
                           </button>
+
+                          {includedInArt ? (
+                            <div
+                              className="remove-from-cart-btn"
+                              onClick={() => removeCartItem(id, form)}
+                            >
+                              Remove
+                            </div>
+                          ) : null}
                         </div>
                       </form>
                     )}

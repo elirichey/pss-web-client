@@ -1,8 +1,9 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function CartItem(props) {
-  console.log("Props:", props.item);
-  const { id, quantity, product } = props.item;
+  const { item, removeCartItem } = props;
+  const { id, quantity, product } = item;
   const { images, manufacturer, name, price, showImages, showPrice } = product;
 
   const placeholderImg = "/image/placeholders/no-image.jpg";
@@ -33,8 +34,12 @@ export default function CartItem(props) {
       </div>
 
       <div className="cart-item-actions">
-        <div className="edit">EDIT</div>
-        <div className="remove">REMOVE</div>
+        <a className="edit" href={`/product/${id}`}>
+          EDIT
+        </a>
+        <div className="remove" onClick={() => removeCartItem(id)}>
+          REMOVE
+        </div>
       </div>
     </li>
   );
