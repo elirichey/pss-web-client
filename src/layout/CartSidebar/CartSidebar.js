@@ -1,4 +1,5 @@
 import CartItem from "./CartItem";
+import { formatToDollars } from "../../utilities/conversions/format-currency";
 
 export default function CartSidebar(props) {
   const { setShowCart } = props;
@@ -15,6 +16,18 @@ export default function CartSidebar(props) {
     }
   };
 
+  const calculateEstimatedTotal = () => {
+    let total = 0;
+    cartItems.map((x) => {
+      const { product, quantity } = x;
+      const { price } = product;
+      const itemTotal = price * quantity;
+      total = total + itemTotal;
+    });
+
+    return formatToDollars(total);
+  };
+
   return (
     <div id="cart-sidebar">
       <span className="cart-sidebar-void" onClick={() => setShowCart(false)} />
@@ -23,28 +36,38 @@ export default function CartSidebar(props) {
           CLOSE
         </button>
 
-        <h4 className="cart-title mt-0">CART</h4>
+        <h4 className="cart-title mt-0">QUOTE GENERATOR</h4>
 
         <ul>
-          {cartItems && cartItems.length > 0
-            ? cartItems.map((item, i) => (
+          {cartItems && cartItems.length > 0 ? (
+            cartItems
+              .sort((a, b) => {
+                if (a.product.name < b.product.name) return -1;
+                if (a.product.name > b.product.name) return 1;
+                return 0;
+              })
+              .map((item, i) => (
                 <CartItem item={item} key={i} removeCartItem={removeCartItem} />
               ))
-            : "No Items In Cart"}
+          ) : (
+            <div className="empty-cart-container pt-15">
+              <p className="empty-cart-txt mb-15">No Items</p>
+            </div>
+          )}
         </ul>
 
         {cartItems && cartItems.length > 0 ? (
           <div className="cart-summary">
-            <div>
-              <p>Checkout</p>
+            <div className="row mb-15">
+              <p className="quote-est-total">
+                <b>Estimated Total:</b> {calculateEstimatedTotal()}
+              </p>
             </div>
 
-            <div>
-              <p>Total: $0.00</p>
-            </div>
-
-            <div>
-              <p>Total</p>
+            <div className="row">
+              <button className="complete-quote-btn">
+                Complete Quote Submission
+              </button>
             </div>
           </div>
         ) : null}

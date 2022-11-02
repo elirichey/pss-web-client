@@ -13,7 +13,13 @@ export default function TopBar(props) {
 
   const updateCartCount = () => {
     const cartItems = localStorage.getItem("cartItems");
-    const count = cartItems ? JSON.parse(cartItems).length : 0;
+    const listItems = JSON.parse(cartItems);
+    let count = 0;
+    cartItems && cartItems.length > 0
+      ? listItems.map((x) => {
+          count = count + parseInt(x.quantity);
+        })
+      : 0;
     setCartCount(count);
   };
 
@@ -26,7 +32,7 @@ export default function TopBar(props) {
           onClick={() => setShowCart(!showCart)}
           className="show-cart-btn"
         >
-          CART {cartCount > 0 ? `( ${cartCount} )` : null}
+          QUOTE GENERATOR {cartCount > 0 ? `( ${cartCount} )` : null}
         </button>
       </div>
 

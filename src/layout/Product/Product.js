@@ -28,13 +28,13 @@ export default function Product(props) {
 
   const attribute = JSON.parse(attributes)["attribute"];
   const size = JSON.parse(attributes)["size"];
-
   const cats = categories ? JSON.parse(categories)["categories"] : [];
 
   const [initialQuantity, setInitialQuantity] = useState("0");
 
   useEffect(() => {
     setValueOnLoad();
+    isIncludedInCart();
     window.addEventListener("storage", isIncludedInCart);
     return () => window.removeEventListener("storage", isIncludedInCart);
   }, []);
@@ -184,7 +184,7 @@ export default function Product(props) {
                             type="submit"
                             disabled={submitting}
                           >
-                            Add to Cart
+                            Add to Quote
                           </button>
 
                           {includedInArt ? (

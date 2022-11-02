@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { formatToDollars } from "../../utilities/conversions/format-currency";
 
 export default function CartItem(props) {
   const { item, removeCartItem } = props;
@@ -25,7 +26,7 @@ export default function CartItem(props) {
         <div className="title">{name}</div>
 
         <p className="price">
-          <b>PRICE:</b> ${price}
+          <b>PRICE:</b> {formatToDollars(price)}
         </p>
 
         <p className="quantity">
