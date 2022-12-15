@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
 import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
+import CallToAction from "../components/CallToAction/CallToAction";
 
 export default function Home() {
   return (
@@ -20,8 +21,10 @@ export default function Home() {
       <main>
         <Header alt={false} />
 
-        <section id="home" className="body">
+        <section id="home" className="body body-column">
           <ListSuppliers />
+
+          <CallToAction />
         </section>
       </main>
 

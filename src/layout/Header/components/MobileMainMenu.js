@@ -78,6 +78,7 @@ export default function MobileMainMenu(props) {
               </Link>
             </li>
 
+            {/*
             <li>
               <span
                 className={
@@ -287,6 +288,13 @@ export default function MobileMainMenu(props) {
                   </li>
                 </ul>
               ) : null}
+            </li>
+            */}
+
+            <li>
+              <Link href="/products">
+                <a className="mobile-menu-primary">Products</a>
+              </Link>
             </li>
 
             <li>

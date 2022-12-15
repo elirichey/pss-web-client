@@ -68,6 +68,7 @@ export default function DesktopMainMenu(props) {
           </span>
         </li>
 
+        {/*
         <li className="desktop-main-menu-link">
           <span
             className="menu-item"
@@ -136,6 +137,15 @@ export default function DesktopMainMenu(props) {
             </span>
           </span>
           {showFleet ? <FleetMegaMenu refProp={clickFleetRef} /> : null}
+        </li>
+        */}
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/products">
+              <a>Products</a>
+            </Link>
+          </span>
         </li>
 
         <li className="desktop-main-menu-link">
