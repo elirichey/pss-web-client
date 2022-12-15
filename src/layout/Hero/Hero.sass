@@ -1,7 +1,7 @@
 .hero
   width: 100%
   min-height: 120px
-  background: purple
+  background: $black
 
 #home-hero
   background-image: url('/image/heros/home.jpeg')
@@ -17,12 +17,29 @@
     margin-top: 60px
     text-shadow: 0px 3px 3px rgba(0,0,0,0.87), 3px 3px 0px rgba(0,0,0,0.87), 3px 0px 3px rgba(0,0,0,0.87)
 
+#contact-hero
+  align-items: center
+  .container
+    justify-content: center
+  h1
+    color: $white
+    font-size: 48px
+    font-weight: 500
+    line-height: 48px
+    padding-bottom: 10px
+    text-transform: uppercase
+
+// Breakpoints
+
 @media(max-width: 1420px)
   #home-hero
     height: 500px
     padding: 0 60px
     h1
       font-size: 32px
+  #contact-hero
+    h1
+      padding: 0 30px
 
 @media(max-width: 720px)
   #home-hero
@@ -32,24 +49,21 @@
       font-size: 32px
       text-align: center
       margin-top: 30px
+  #contact-hero
+    h1
+      padding-top: 5px
+      font-size: 32px
 
 @media(max-width: 630px)
   #home-hero
     height: 540px
     padding: 0 30px
     background-position-x: left
-    h1
-      font-size: 32px
-      text-align: center
-      margin-top: 30px
 
 @media(max-width: 530px)
   #home-hero
     height: 400px
-    // padding: 0 60px
     background-position-x: left
     background-position-y: top
     h1
       font-size: 24px
-      text-align: center
-      margin-top: 30px

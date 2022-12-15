@@ -298,7 +298,7 @@ export default function MobileMainMenu(props) {
             </li>
 
             <li>
-              <Link href="/">
+              <Link href="/contact">
                 <a className="mobile-menu-primary">Contact</a>
               </Link>
             </li>
