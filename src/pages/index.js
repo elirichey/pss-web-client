@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
+import Hero from "../layout/Hero/Hero";
 import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
 import CallToAction from "../components/CallToAction/CallToAction";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,8 +23,42 @@ export default function Home() {
       <main>
         <Header alt={false} />
 
-        <section id="home" className="body body-column">
-          <ListSuppliers />
+        <section id="home-intro" className="body body-column">
+          <Hero
+            id="home-hero"
+            title="EMERGENCY VEHICLE EQUIPMENT SALES, SERVICE & INSTALLATIONS"
+          />
+
+          <div id="home-intro">
+            <div className="container-md py-30 column">
+              <h2>We Do It All</h2>
+              <p className="intro-p">
+                PSS is your one stop shop for your fleet and emergency serivce
+                vehicle needs. Whether is it a repair part or a turn-key
+                vehicle, we have what you need. We offer full-service
+                installation services for both interior and exterior parts and
+                accessories. For those who handle their own installations, we
+                can provide you with all of the equipment you need to do it
+                yourself too. We have been servicing fleet and emergency service
+                vehicles of all shapes and sizes for the past 11 years in
+                central Indiana and have continually delivered the highest
+                quality results for each and every project.
+              </p>
+              <p>
+                PSS actively solicits input from the end user to guarantee that
+                our customers have the highest level of satisfaction with any
+                given project.
+              </p>
+
+              <Link href="/products">
+                <a className="shop-btn">SHOP NOW</a>
+              </Link>
+            </div>
+          </div>
+
+          <div id="home-suppliers">
+            <ListSuppliers showTitle={true} />
+          </div>
 
           <CallToAction />
         </section>
