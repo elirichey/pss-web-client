@@ -7,13 +7,11 @@ export default function HeaderLogo(props) {
   return (
     <div id={alt ? "fleet-logo" : "header-logo"}>
       <Link href="/">
-        <a>
-          {alt ? (
-            <Image src="/image/logo-fleet.png" height={67} width={333} />
-          ) : (
-            <Image src="/image/logo-main.png" height={67} width={270} />
-          )}
-        </a>
+        {alt ? (
+          <Image src="/image/logo-fleet.png" height={67} width={333} />
+        ) : (
+          <Image src="/image/logo-main.png" height={67} width={270} />
+        )}
       </Link>
     </div>
   );

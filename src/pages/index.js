@@ -50,7 +50,7 @@ export default function Home() {
                 given project.
               </p>
 
-              <Link href="/products">
+              <Link href="/products" legacyBehavior>
                 <a className="shop-btn">SHOP NOW</a>
               </Link>
             </div>

@@ -12,48 +12,32 @@ export default function FireEMSMegaMenu(props) {
           <span className="title">Fire_EMS_Category</span>
           <ul>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
           </ul>
 
           <span className="title pt-15">Fire_EMS_Category</span>
           <ul>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
           </ul>
         </div>
@@ -62,47 +46,31 @@ export default function FireEMSMegaMenu(props) {
           <span className="title">Fire_EMS_Category</span>
           <ul>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
           </ul>
           <span className="title pt-15">Fire_EMS_Category</span>
           <ul>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
           </ul>
         </div>
@@ -111,47 +79,31 @@ export default function FireEMSMegaMenu(props) {
           <span className="title">Fire_EMS_Category</span>
           <ul>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
           </ul>
           <span className="title pt-15">Fire_EMS_Category</span>
           <ul>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
             <li>
-              <Link href="/products">
-                <a>List Items</a>
-              </Link>
+              <Link href="/products">List Items</Link>
             </li>
           </ul>
         </div>

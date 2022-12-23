@@ -27,19 +27,17 @@ export default function RenderProduct(props) {
   return (
     <li className="list-product-item">
       <Link href={`/product/${id}`}>
-        <a>
-          <div className="image-container">
-            <Image src={imgSrc} layout="fill" objectFit="contain" />
-          </div>
+        <div className="image-container">
+          <Image src={imgSrc} layout="fill" objectFit="contain" />
+        </div>
 
-          <div className="text-container">
-            <span className="product-name">
-              <span>{name}</span>
-            </span>
-            <span className="product-manufacturer">{manufacturer}</span>
-            <span className="product-type">{type}</span>
-          </div>
-        </a>
+        <div className="text-container">
+          <span className="product-name">
+            <span>{name}</span>
+          </span>
+          <span className="product-manufacturer">{manufacturer}</span>
+          <span className="product-type">{type}</span>
+        </div>
       </Link>
     </li>
   );

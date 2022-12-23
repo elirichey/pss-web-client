@@ -12,9 +12,7 @@ export default function CallToAction(props) {
           in a timely and professional manner.
         </p>
 
-        <Link href="/contact">
-          <a>Contact Us</a>
-        </Link>
+        <Link href="/contact">Contact Us</Link>
       </div>
     </div>
   );

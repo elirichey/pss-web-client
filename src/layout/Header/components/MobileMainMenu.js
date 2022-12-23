@@ -73,7 +73,7 @@ export default function MobileMainMenu(props) {
         <div id="mobile-menu-dropdown">
           <ul className="mobile-menu-dropdown-container">
             <li>
-              <Link href="/">
+              <Link href="/" legacyBehavior>
                 <a className="mobile-menu-primary">Home</a>
               </Link>
             </li>
@@ -292,13 +292,13 @@ export default function MobileMainMenu(props) {
             */}
 
             <li>
-              <Link href="/products">
+              <Link href="/products" legacyBehavior>
                 <a className="mobile-menu-primary">Products</a>
               </Link>
             </li>
 
             <li>
-              <Link href="/contact">
+              <Link href="/contact" legacyBehavior>
                 <a className="mobile-menu-primary">Contact</a>
               </Link>
             </li>

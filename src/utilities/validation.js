@@ -18,7 +18,7 @@ export const mustBeEmail = (val) => {
 
 // Phone Number
 export const mustBePhone = async (val) => {
-  const numb = val.match(/\d/g);
+  let numb = val.match(/\d/g);
   numb = numb.join("");
   if (numb.length < 10) return "Invalid Phone Number";
   else return undefined;

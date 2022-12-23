@@ -62,9 +62,7 @@ export default function DesktopMainMenu(props) {
       <ul className="flex row">
         <li className="desktop-main-menu-link">
           <span className="menu-item">
-            <Link href="/">
-              <a>Home</a>
-            </Link>
+            <Link href="/">Home</Link>
           </span>
         </li>
 
@@ -142,17 +140,13 @@ export default function DesktopMainMenu(props) {
 
         <li className="desktop-main-menu-link">
           <span className="menu-item">
-            <Link href="/products">
-              <a>Products</a>
-            </Link>
+            <Link href="/products">Products</Link>
           </span>
         </li>
 
         <li className="desktop-main-menu-link">
           <span className="menu-item">
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
+            <Link href="/contact">Contact</Link>
           </span>
         </li>
       </ul>

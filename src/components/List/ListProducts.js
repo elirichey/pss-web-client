@@ -6,9 +6,9 @@ export default function ListProducts(props) {
   return (
     <div id="list-products">
       <ul>
-        {products.map((item, i) => (
-          <RenderProduct item={item} key={i} />
-        ))}
+        {products && products.length > 0
+          ? products.map((item, i) => <RenderProduct item={item} key={i} />)
+          : "No Products"}
       </ul>
     </div>
   );

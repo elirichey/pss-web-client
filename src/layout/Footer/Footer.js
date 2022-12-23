@@ -21,9 +21,7 @@ export default function Footer(props) {
                 const { category, url } = item;
                 return (
                   <li key={i}>
-                    <Link href={url}>
-                      <a>{category}</a>
-                    </Link>
+                    <Link href={url}>{category}</Link>
                   </li>
                 );
               })}
@@ -37,9 +35,7 @@ export default function Footer(props) {
                 const { category, url } = item;
                 return (
                   <li key={i}>
-                    <Link href={url}>
-                      <a>{category}</a>
-                    </Link>
+                    <Link href={url}>{category}</Link>
                   </li>
                 );
               })}
@@ -53,9 +49,7 @@ export default function Footer(props) {
                 const { category, url } = item;
                 return (
                   <li key={i}>
-                    <Link href={url}>
-                      <a>{category}</a>
-                    </Link>
+                    <Link href={url}>{category}</Link>
                   </li>
                 );
               })}
@@ -90,9 +84,7 @@ export default function Footer(props) {
         <div className="container row text-center">
           <div id="footer-logo" className="column">
             <Link href="/">
-              <a>
-                <Image src="/svg/logo-text-white.svg" height={33} width={120} />
-              </a>
+              <Image src="/svg/logo-text-white.svg" height={33} width={120} />
             </Link>
           </div>
 

@@ -124,9 +124,11 @@ export default function Product(props) {
   return (
     <div className="container-md mb-30">
       <div className="column pb-15">
-        <div className="row">
-          <p>Breadcrumbs</p>
+        {/*
+        <div className="row">          
+          <p>Breadcrumbs</p>          
         </div>
+        */}
 
         <div className="row product-body">
           <div className="product-image">
