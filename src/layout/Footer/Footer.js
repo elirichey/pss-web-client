@@ -96,7 +96,7 @@ export default function Footer(props) {
 
           <div id="footer-social" className="column">
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/profile.php?id=100054216142498"
               target="_blank"
               className="social-icon"
             >
