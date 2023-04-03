@@ -20,14 +20,15 @@ export default function Product(props) {
     showImages,
     showPrice,
     type,
+    altId,
   } = product;
 
   const placeholderImg = "/image/placeholders/no-image.jpg";
   const image = images ? JSON.parse(images)[0] : null;
   const imgSrc = image ? image : placeholderImg;
 
-  const attribute = JSON.parse(attributes)["attribute"];
-  const size = JSON.parse(attributes)["size"];
+  const attribute = attributes ? JSON.parse(attributes)["attribute"] : null;
+  const size = attributes ? JSON.parse(attributes)["size"] : null;
   const cats = categories ? JSON.parse(categories)["categories"] : [];
 
   const [initialQuantity, setInitialQuantity] = useState("0");
@@ -222,7 +223,7 @@ export default function Product(props) {
               </div>
             </div>
 
-            {type || attribute || size ? (
+            {type || attribute || size || altId ? (
               <div className="row my-15">
                 <div className="column">
                   <ul className="list-attributes">
@@ -240,6 +241,12 @@ export default function Product(props) {
                     {size ? (
                       <li className="attribute">
                         <b className="opacity-50">SIZE:</b> {size}
+                      </li>
+                    ) : null}
+
+                    {altId ? (
+                      <li className="attribute">
+                        <b className="opacity-50">Lookup:</b> {altId}
                       </li>
                     ) : null}
                   </ul>
@@ -265,6 +272,14 @@ export default function Product(props) {
                 </div>
               </div>
             ) : null}
+
+            {/* DISCLAIMER */}
+            <div className="row mt-30">
+              <div className="column mt-1">
+                ** Disclaimer: Product pricing is subject to change without
+                notice **
+              </div>
+            </div>
           </div>
         </div>
       </div>
