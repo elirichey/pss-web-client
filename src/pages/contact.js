@@ -2,7 +2,6 @@ import Head from "next/head";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
 import Hero from "../layout/Hero/Hero";
-import Link from "next/link";
 import ContactPage from "../layout/Contact/Contact";
 
 export default function Contact() {

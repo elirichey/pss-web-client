@@ -5,10 +5,10 @@ import FooterMenuLinks from "./data/FooterMenuLinks";
 export default function Footer(props) {
   const year = new Date().getFullYear();
 
-  const { productCategories } = FooterMenuLinks;
-  const half = Math.ceil(productCategories.length / 2);
-  const firstHalf = productCategories.slice(0, half);
-  const secondHalf = productCategories.slice(-half);
+  const { serviceLinks } = FooterMenuLinks;
+  const half = Math.ceil(serviceLinks.length / 2);
+  const firstHalf = serviceLinks.slice(0, half);
+  const secondHalf = serviceLinks.slice(-half);
 
   return (
     <footer>
@@ -17,7 +17,7 @@ export default function Footer(props) {
           <div className="column hide-desktop">
             <span className="footer-title">Product Categories</span>
             <ul>
-              {productCategories.map((item, i) => {
+              {serviceLinks.map((item, i) => {
                 const { category, url } = item;
                 return (
                   <li key={i}>
@@ -29,7 +29,7 @@ export default function Footer(props) {
           </div>
 
           <div className="column hide-mobile">
-            <span className="footer-title">Product Categories</span>
+            <span className="footer-title">Specialties</span>
             <ul>
               {firstHalf.map((item, i) => {
                 const { category, url } = item;

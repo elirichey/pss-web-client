@@ -7,5 +7,11 @@ const productCategories = [
   { category: "Speed Measurement", url: "#" },
 ];
 
-const FooterMenuLinks = { productCategories };
+const serviceLinks = [
+  { category: "Customization", url: "#" },
+  { category: "Products & Equipment", url: "#" },
+  { category: "Fleet", url: "/fleet" },
+];
+
+const FooterMenuLinks = { productCategories, serviceLinks };
 export default FooterMenuLinks;

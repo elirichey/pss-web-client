@@ -1,10 +1,10 @@
 import Head from "next/head";
+import Link from "next/link";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
 import Hero from "../layout/Hero/Hero";
 import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
 import CallToAction from "../components/CallToAction/CallToAction";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <main>
         <Header alt={false} />
 
-        <section id="home-intro" className="body body-column">
+        <section className="body body-column">
           <Hero
             id="home-hero"
             title="EMERGENCY VEHICLE EQUIPMENT SALES, SERVICE & INSTALLATIONS"
@@ -44,15 +44,15 @@ export default function Home() {
                 central Indiana and have continually delivered the highest
                 quality results for each and every project.
               </p>
-              <p>
+              <p className="mb-30">
                 PSS actively solicits input from the end user to guarantee that
                 our customers have the highest level of satisfaction with any
                 given project.
               </p>
 
-              <Link href="/products" legacyBehavior>
+              {/*<Link href="/products" legacyBehavior>
                 <a className="shop-btn">SHOP NOW</a>
-              </Link>
+              </Link>*/}
             </div>
           </div>
 

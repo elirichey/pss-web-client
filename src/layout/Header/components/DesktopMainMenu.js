@@ -138,9 +138,15 @@ export default function DesktopMainMenu(props) {
         </li>
         */}
 
-        <li className="desktop-main-menu-link">
+        {/*<li className="desktop-main-menu-link">
           <span className="menu-item">
             <Link href="/products">Products</Link>
+          </span>
+        </li>*/}
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/fleet">Fleet</Link>
           </span>
         </li>
 

@@ -291,9 +291,15 @@ export default function MobileMainMenu(props) {
             </li>
             */}
 
-            <li>
+            {/*<li>
               <Link href="/products" legacyBehavior>
                 <a className="mobile-menu-primary">Products</a>
+              </Link>
+            </li>*/}
+
+            <li>
+              <Link href="/fleet" legacyBehavior>
+                <a className="mobile-menu-primary">Fleet</a>
               </Link>
             </li>
 

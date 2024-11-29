@@ -6,7 +6,7 @@ import TopBar from "./components/TopBar";
 export default function Header(props) {
   return (
     <section id="header" className="column">
-      <TopBar />
+      {/*<TopBar />*/}
 
       <div id="header-body">
         <div className="container row">
