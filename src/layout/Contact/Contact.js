@@ -18,10 +18,10 @@ export default function ContactPage(props) {
   return (
     <div id="contact-body" className="container-sm column">
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+        Thank you for choosing PSS for your fleet and emergency vehicle needs.
+        We’re committed to delivering high-quality products and services
+        tailored to your needs. Please use the form below to contact us with any
+        questions or requests. We look forward to assisting you!
       </p>
 
       <Form

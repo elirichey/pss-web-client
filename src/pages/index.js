@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
 import Hero from "../layout/Hero/Hero";
 import ListSuppliers from "../components/ListSuppliers/ListSuppliers";
+import OurWork from "../components/OurWork/OurWork";
 import CallToAction from "../components/CallToAction/CallToAction";
 
 export default function Home() {
@@ -58,6 +58,10 @@ export default function Home() {
 
           <div id="home-suppliers">
             <ListSuppliers showTitle={true} />
+          </div>
+
+          <div id="home-our-work">
+            <OurWork />
           </div>
 
           <CallToAction />

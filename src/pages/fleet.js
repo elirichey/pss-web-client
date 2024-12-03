@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
-import Hero from "../layout/Hero/Hero";
-import ContactPage from "../layout/Contact/Contact";
+import FleetPage from "../layout/Fleet/Fleet";
 
 export default function Fleet() {
   return (
@@ -21,11 +20,7 @@ export default function Fleet() {
       <main>
         <Header alt={true} />
 
-        <section id="fleet" className="body body-column">
-          <Hero id="fleet-hero" title="Fleet" />
-
-          {/*<ContactPage />*/}
-        </section>
+        <FleetPage />
       </main>
 
       <Footer />

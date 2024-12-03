@@ -1,5 +1,6 @@
 #home-intro
   background-color: $black
+  padding: 30px 0 35px
   h2
     text-transform: uppercase
     font-weight: 500
@@ -26,6 +27,14 @@
 #home-suppliers
   background-color: $most_lt_blue
 
+#home-our-work
+  background-color: $white
+  #our-work
+    background-color: $white
+    h3
+      color: $black
+      margin-bottom: 30px
+
 @media(max-width: 1200px)
   #home-intro
     h2
@@ -35,3 +44,11 @@
     .shop-btn
       margin-left: auto
       margin-right: auto
+
+@media(max-width: 900px)
+  #home-our-work
+    .row
+      flex-direction: column
+      .work-item
+        margin-left: 0
+        margin-right: 0
