@@ -8,8 +8,7 @@ const productCategories = [
 ];
 
 const serviceLinks = [
-  { category: "Customization", url: "#" },
-  { category: "Products & Equipment", url: "#" },
+  { category: "Emergency Service", url: "/" },
   { category: "Fleet", url: "/fleet" },
 ];
 
