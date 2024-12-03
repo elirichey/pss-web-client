@@ -15,7 +15,7 @@ export default function Footer(props) {
       <div id="footer-main">
         <div className="container-md row">
           <div className="column hide-desktop">
-            <span className="footer-title">Product Categories</span>
+            <span className="footer-title">Services</span>
             <ul>
               {serviceLinks.map((item, i) => {
                 const { category, url } = item;
