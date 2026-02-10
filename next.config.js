@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/category",
+        destination: "/",
+        permanent: false, 
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
