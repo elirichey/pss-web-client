@@ -8,11 +8,11 @@ export default function Fleet() {
     <>
       <Head>
         <title>
-          PSS | Emergency Vehicle Equipment | Sales, Service, & Installations
+          PSS | Emergency & Fleet Vehicle Equipment | Sales, Service, & Installations
         </title>
         <meta
           name="description"
-          content="PSS | Emergency Vehicle Equipment | Sales, Service, & Installations"
+          content="PSS | Emergency & Fleet Vehicle Equipment | Sales, Service, & Installations"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -6,6 +6,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "d39mtxj8ssuyt4.cloudfront.net",
       },
+      {
+        protocol: "https",
+        hostname: "opensheet.elk.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
 };

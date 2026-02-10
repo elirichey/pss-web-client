@@ -1,10 +1,26 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import PoliceMegaMenu from "./megamenus/PoliceMegaMenu";
-import FireEMSMegaMenu from "./megamenus/FireEMSMegaMenu";
-import FleetMegaMenu from "./megamenus/FleetMegaMenu";
+// import PoliceMegaMenu from "./megamenus/PoliceMegaMenu";
+// import FireEMSMegaMenu from "./megamenus/FireEMSMegaMenu";
+// import FleetMegaMenu from "./megamenus/FleetMegaMenu";
+import CategoriesMegaMenu from "./megamenus/CategoriesMegaMenu";
 
 export default function DesktopMainMenu(props) {
+  const clickCategoriesRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      const { current } = clickCategoriesRef;
+      if (current && !current.contains(e.target)) {
+        setShowCategories(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [clickCategoriesRef]);
+
+  /*
   const clickPoliceRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -52,8 +68,10 @@ export default function DesktopMainMenu(props) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [clickFleetRef]);
+  */
 
   const [showPolice, setShowPolice] = useState(false);
+  const [showCategories, setShowCategories] = useState(false);
   const [showFireEMT, setShowFireEMT] = useState(false);
   const [showFleet, setShowFleet] = useState(false);
 
@@ -65,6 +83,70 @@ export default function DesktopMainMenu(props) {
             <Link href="/">Home</Link>
           </span>
         </li>
+
+      {/*
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/">Computer Mounts</Link>
+          </span>
+        </li>
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/">Equipment Consoles</Link>
+          </span>
+        </li>
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/">K9 Transport</Link>
+          </span>
+        </li>
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/">Emergency Warning Lights</Link>
+          </span>
+        </li>
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/">Push Bumpers</Link>
+          </span>
+        </li>
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/">Speed Measurement</Link>
+          </span>
+        </li>
+        */}
+
+        <li className="desktop-main-menu-link">
+          <span
+            className={showCategories ? "menu-item open" : "menu-item"}
+            onClick={() => {
+              setShowCategories(!showCategories);
+              // showPolice ? setShowPolice(false) : null;
+              // showFireEMT ? setShowFireEMT(false) : null;
+              // showFleet ? setShowFleet(false) : null;
+            }}
+          >
+            Categories
+            <span
+              className={
+                showCategories
+                  ? "megamenu-dropdown-indicator open"
+                  : "megamenu-dropdown-indicator"
+              }
+            >
+              »
+            </span>
+          </span>
+
+          {showCategories ? <CategoriesMegaMenu refProp={clickCategoriesRef} /> : null}
+        </li>
+
 
         {/*
         <li className="desktop-main-menu-link">

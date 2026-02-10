@@ -25,21 +25,31 @@ export default function MobileMainMenu(props) {
   const [showMenu, setShowMenu] = useState(false);
 
   // Main Categories
+  const [showSubCategories, setShowSubCategories] = useState(false);
   const [showSubPolice, setShowSubPolice] = useState(false);
   const [showSubFireEMT, setShowSubFireEMT] = useState(false);
   const [showSubFleet, setShowSubFleet] = useState(false);
   const toggleSubMenu = (type) => {
+    if (type === "categories") {
+      setShowSubCategories(!showSubCategories);
+      showSubPolice ? setShowSubPolice(false) : null;
+      showSubFireEMT ? setShowSubFireEMT(false) : null;
+      showSubFleet ? setShowSubFleet(false) : null;
+    }
     if (type === "police") {
       setShowSubPolice(!showSubPolice);
+      showSubCategories ? setShowSubCategories(false) : null;
       showSubFireEMT ? setShowSubFireEMT(false) : null;
       showSubFleet ? setShowSubFleet(false) : null;
     }
     if (type === "fire_ems") {
+      showSubCategories ? setShowSubCategories(false) : null;
       showSubPolice ? setShowSubPolice(false) : null;
       setShowSubFireEMT(!showSubFireEMT);
       showSubFleet ? setShowSubFleet(false) : null;
     }
     if (type === "fleet") {
+      showSubCategories ? setShowSubCategories(false) : null;
       showSubPolice ? setShowSubPolice(false) : null;
       showSubFireEMT ? setShowSubFireEMT(false) : null;
       setShowSubFleet(!showSubFleet);
@@ -76,6 +86,63 @@ export default function MobileMainMenu(props) {
               <Link href="/" legacyBehavior>
                 <a className="mobile-menu-primary">Home</a>
               </Link>
+            </li>
+
+            <li>
+              <span
+                className={
+                  showSubCategories
+                    ? "mobile-menu-primary open"
+                    : "mobile-menu-primary"
+                }
+                onClick={() => toggleSubMenu("categories")}
+              >
+                Categories
+                <span
+                  className={
+                    showSubCategories
+                      ? "mobile-menu-dropdown-indicator open"
+                      : "mobile-menu-dropdown-indicator"
+                  }
+                >
+                  »
+                </span>
+              </span>
+
+              {showSubCategories ? (
+                <ul>              
+                  <li>
+                    <Link href="/category/mounts" className="mobile-menu-secondary">
+                      Computer Mounts
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/consoles" className="mobile-menu-secondary">
+                      Equipment Consoles
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/k9" className="mobile-menu-secondary">
+                      K9 Transport
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/lights" className="mobile-menu-secondary">
+                      Emergency Warning Lights
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/bumpers" className="mobile-menu-secondary">
+                      Push Bumpers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/category/speed" className="mobile-menu-secondary">
+                      Speed Measurement
+                    </Link>
+                  </li>
+                </ul>
+              ) : null}
             </li>
 
             {/*
