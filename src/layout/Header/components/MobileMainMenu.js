@@ -110,37 +110,42 @@ export default function MobileMainMenu(props) {
               </span>
 
               {showSubCategories ? (
-                <ul>              
+                <ul>          
                   <li>
-                    <Link href="/category/mounts" className="mobile-menu-secondary">
-                      Computer Mounts
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/category/consoles" className="mobile-menu-secondary">
-                      Equipment Consoles
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/category/k9" className="mobile-menu-secondary">
-                      K9 Transport
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/category/lights" className="mobile-menu-secondary">
-                      Emergency Warning Lights
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/category/bumpers" className="mobile-menu-secondary">
-                      Push Bumpers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/category/speed" className="mobile-menu-secondary">
-                      Speed Measurement
-                    </Link>
-                  </li>
+                        <Link href="/category/mounts" className="mobile-menu-secondary">Computer Mounts</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/consoles" className="mobile-menu-secondary">Consoles</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/gun-racks" className="mobile-menu-secondary">Gun Racks</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/k9" className="mobile-menu-secondary">K9</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/lights" className="mobile-menu-secondary">Lights</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/transport" className="mobile-menu-secondary">Prisoner Transport</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/bumpers" className="mobile-menu-secondary">Push / PIT Bars</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/speed" className="mobile-menu-secondary">Radar</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/sirens" className="mobile-menu-secondary">Sirens</Link>
+                    </li>
+                    
+                    <li>
+                        <Link href="/category/vaults" className="mobile-menu-secondary">Storage Vaults</Link>
+                    </li>
+                    <li>
+                        <Link href="/category/thermal-cameras" className="mobile-menu-secondary">Thermal Cameras</Link>
+                    </li>
+                      
                 </ul>
               ) : null}
             </li>
