@@ -51,10 +51,9 @@ iframe
   position: relative
   background-color: $most_lt_blue
   min-height: calc(100vh - 370px) // footer = 372
-  padding-top: 92px // 132px
+  padding-top: 138px // 132px // 92px
 .body-column
   flex-direction: column
-
 .justify-center
   justify-content: center
 .align-center
@@ -235,4 +234,6 @@ ul
 .opacity-33
   opacity: 0.33
 
-// Modals
+@media(max-width: 1023px)
+  .body
+    padding-top: 92px

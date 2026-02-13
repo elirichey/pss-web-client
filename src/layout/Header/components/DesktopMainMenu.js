@@ -122,7 +122,7 @@ export default function DesktopMainMenu(props) {
         </li>
         */}
 
-        <li className="desktop-main-menu-link">
+        {/* <li className="desktop-main-menu-link">
           <span
             className={showCategories ? "menu-item open" : "menu-item"}
             onClick={() => {
@@ -145,7 +145,7 @@ export default function DesktopMainMenu(props) {
           </span>
 
           {showCategories ? <CategoriesMegaMenu refProp={clickCategoriesRef} /> : null}
-        </li>
+        </li> */}
 
 
         {/*

@@ -3,7 +3,7 @@ import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
 import Hero from "../../layout/Hero/Hero";
 import CallToAction from "../../components/CallToAction/CallToAction";
-import LightsPage from "../../layout/Category/lights";
+import CategoryItems from "../../layout/Category/CategoryItems";
 import ProductsHttp from "../../utilities/http/products";
 
 export default function Lights({ products }) {
@@ -29,7 +29,7 @@ export default function Lights({ products }) {
             title="EMERGENCY WARNING LIGHTS"
           />
           
-          <LightsPage products={products} />
+          <CategoryItems products={products} />
 
           <CallToAction />
         </section>

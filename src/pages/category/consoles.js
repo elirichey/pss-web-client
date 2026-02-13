@@ -3,7 +3,7 @@ import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
 import Hero from "../../layout/Hero/Hero";
 import CallToAction from "../../components/CallToAction/CallToAction";
-import ConsolesPage from "../../layout/Category/consoles";
+import CategoryItems from "../../layout/Category/CategoryItems";
 import ProductsHttp from "../../utilities/http/products";
 
 export default function Consoles({ products }) {
@@ -29,7 +29,7 @@ export default function Consoles({ products }) {
             title="EQUIPMENT CONSOLES"
           />
           
-          <ConsolesPage products={products} />
+          <CategoryItems products={products} />
 
           <CallToAction />
         </section>

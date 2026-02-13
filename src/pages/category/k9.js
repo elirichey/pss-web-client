@@ -4,7 +4,7 @@ import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
 import Hero from "../../layout/Hero/Hero";
 import CallToAction from "../../components/CallToAction/CallToAction";
-import K9Page from "../../layout/Category/k9";
+import CategoryItems from "../../layout/Category/CategoryItems";
 import ProductsHttp from "../../utilities/http/products";
 
 export default function K9({ products }) {
@@ -12,11 +12,11 @@ export default function K9({ products }) {
     <>
       <Head>
         <title>
-          PSS | Emergency & Fleet Vehicle Equipment | K9 Transport Inserts & Accessories
+          PSS | Emergency & Fleet Vehicle Equipment | K9 Equipment
         </title>
         <meta
           name="description"
-          content="PSS | Emergency & Fleet Vehicle Equipment | K9 Transport Inserts & Accessories"
+          content="PSS | Emergency & Fleet Vehicle Equipment | K9 Equipment"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -27,10 +27,10 @@ export default function K9({ products }) {
         <section className="body body-column">
           <Hero
             id="category-hero"
-            title="K9 TRANSPORT INSERTS & ACCESSORIES"
+            title="K9 EQUIPMENT"
           />
           
-          <K9Page products={products} />
+          <CategoryItems products={products} />
 
           <CallToAction />
         </section>

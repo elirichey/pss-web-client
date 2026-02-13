@@ -1,6 +1,5 @@
 #header
-  display: flex
-  border-bottom: solid 1px $most_lt_blue
+  display: flex  
   position: fixed
   top: 0
   left: 0
@@ -50,6 +49,7 @@
 #desktop-main-menu
   display: flex
   justify-content: flex-end
+  border-bottom: solid 1px $most_lt_blue
   ul
     max-width: 960px
     justify-content: flex-end
@@ -168,6 +168,23 @@
   li
     margin-bottom: 15px
 
+#desktop-sub-menu
+  display: flex
+  background-color: $black
+  align-items: center
+  justify-content: center
+  padding: 15px 30px
+  ul
+    display: flex
+    align-items: center
+    justify-content: center
+  li
+    margin: 0 15px
+  a
+    color: $white
+    &:hover
+      color: $red
+
 // Breakpoints
 
 @media(max-width: 1300px)
@@ -229,6 +246,8 @@
 
 @media(max-width: 1023px)
   #desktop-main-menu
+    display: none
+  #desktop-sub-menu
     display: none
   #mobile-main-menu
     display: flex

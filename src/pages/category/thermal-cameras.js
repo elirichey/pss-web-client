@@ -1,0 +1,48 @@
+import Head from "next/head";
+import Header from "../../layout/Header/Header";
+import Footer from "../../layout/Footer/Footer";
+import Hero from "../../layout/Hero/Hero";
+import CallToAction from "../../components/CallToAction/CallToAction";
+import CategoryItems from "../../layout/Category/CategoryItems";
+import ProductsHttp from "../../utilities/http/products";
+
+export default function ThermalCameras({ products }) {
+  return (
+    <>
+      <Head>
+        <title>
+          PSS | Emergency & Fleet Vehicle Equipment | Thermal Cameras
+        </title>
+        <meta
+          name="description"
+          content="PSS | Emergency & Fleet Vehicle Equipment | Thermal Cameras"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main>
+        <Header alt={false} />
+
+        <section className="body body-column">
+          <Hero
+            id="category-hero"
+            title="THERMAL CAMERAS"
+          />
+          
+          <CategoryItems products={products} />
+
+          <CallToAction />
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+export async function getServerSideProps() {
+  const res = await ProductsHttp.getProducts('thermalCameras');
+  const products = res?.data ?? [];
+  return { props: { products } };
+}
+

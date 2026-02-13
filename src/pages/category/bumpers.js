@@ -3,7 +3,7 @@ import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
 import Hero from "../../layout/Hero/Hero";
 import CallToAction from "../../components/CallToAction/CallToAction";
-import BumpersPage from "../../layout/Category/bumpers";
+import CategoryItems from "../../layout/Category/CategoryItems";
 import ProductsHttp from "../../utilities/http/products";
 
 export default function Bumpers({ products }) {
@@ -11,11 +11,11 @@ export default function Bumpers({ products }) {
     <>
       <Head>
         <title>
-          PSS | Emergency & Fleet Vehicle Equipment | Push Bumpers
+          PSS | Emergency & Fleet Vehicle Equipment | Push Bumpers & Pit Bars
         </title>
         <meta
           name="description"
-          content="PSS | Emergency & Fleet Vehicle Equipment | Push Bumpers"
+          content="PSS | Emergency & Fleet Vehicle Equipment | Push Bumpers & Pit Bars"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -26,10 +26,10 @@ export default function Bumpers({ products }) {
         <section className="body body-column">
           <Hero
             id="category-hero"
-            title="PUSH BUMPERS"
+            title="PUSH BUMPERS & PIT BARS"
           />
           
-          <BumpersPage products={products} />
+          <CategoryItems products={products} />
 
           <CallToAction />
         </section>

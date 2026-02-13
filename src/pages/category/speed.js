@@ -3,7 +3,7 @@ import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
 import Hero from "../../layout/Hero/Hero";
 import CallToAction from "../../components/CallToAction/CallToAction";
-import SpeedPage from "../../layout/Category/speed";
+import CategoryItems from "../../layout/Category/CategoryItems";
 import ProductsHttp from "../../utilities/http/products";
 
 export default function Speed({ products }) {
@@ -26,10 +26,10 @@ export default function Speed({ products }) {
         <section className="body body-column">
           <Hero
             id="category-hero"
-            title="SPEED MEASUREMENT"
+            title="RADAR & SPEED MEASUREMENT"
           />
           
-          <SpeedPage products={products} />
+          <CategoryItems products={products} />
 
           <CallToAction />
         </section>
