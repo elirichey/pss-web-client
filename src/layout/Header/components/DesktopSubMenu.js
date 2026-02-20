@@ -12,6 +12,9 @@ export default function DesktopSubMenu() {
                         <Link href="/category/consoles">Consoles</Link>
                     </li>
                     <li>
+                        <Link href="/category/extras">Extras</Link>
+                    </li>
+                    <li>
                         <Link href="/category/gun-racks">Gun Racks</Link>
                     </li>
                     <li>
