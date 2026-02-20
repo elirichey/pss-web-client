@@ -237,6 +237,12 @@ export default function DesktopMainMenu(props) {
             <Link href="/contact">Contact</Link>
           </span>
         </li>
+
+        <li className="desktop-main-menu-link">
+          <span className="menu-item">
+            <Link href="/about">About</Link>
+          </span>
+        </li>
       </ul>
     </div>
   );

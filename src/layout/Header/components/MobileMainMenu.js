@@ -380,6 +380,12 @@ export default function MobileMainMenu(props) {
                 <a className="mobile-menu-primary">Contact</a>
               </Link>
             </li>
+
+            <li>
+              <Link href="/about" legacyBehavior>
+                <a className="mobile-menu-primary">About</a>
+              </Link>
+            </li>
           </ul>
         </div>
       ) : null}
