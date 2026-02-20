@@ -41,7 +41,7 @@ export default function GunRacks({ products }) {
 }
 
 export async function getServerSideProps() {
-  const res = await ProductsHttp.getProducts('speed');
+  const res = await ProductsHttp.getProducts('racks');
   const products = res?.data ?? [];
   return { props: { products } };
 }
